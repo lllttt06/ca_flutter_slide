@@ -16,12 +16,6 @@ class SlideScreen extends HookWidget {
     return DefaultContainer(
       screenName: 'SlideScreen',
       child: FlutterDeckApp(
-        // speakerInfo: const FlutterDeckSpeakerInfo(
-        //   name: 'John Doe',
-        //   description: 'CEO of flutter_deck',
-        //   socialHandle: '@john_doe',
-        //   imagePath: '',
-        // ),
         configuration: FlutterDeckConfiguration(
           background: const FlutterDeckBackgroundConfiguration(
             light: FlutterDeckBackground.solid(Color(0xFFB5FFFC)),

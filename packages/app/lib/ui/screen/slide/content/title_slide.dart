@@ -14,8 +14,8 @@ class TitleSlide extends FlutterDeckSlideWidget {
   @override
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.title(
-      title: 'Here goes the title of the slide',
-      subtitle: 'Here goes the subtitle of the slide (optional)',
+      title: 'Flutter × Rive',
+      subtitle: '魅力的なインタラクティブアニメーション',
     );
   }
 }
