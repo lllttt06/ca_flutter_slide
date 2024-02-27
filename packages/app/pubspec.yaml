@@ -1,0 +1,65 @@
+name: yakyulog
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.2 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  # ルーティング
+  auto_route: ^7.8.3
+
+  cupertino_icons: ^1.0.2
+
+  # firebase
+  cloud_firestore: ^4.8.1
+  firebase_core: ^2.14.0
+
+  # アノテーション
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.1
+  riverpod_annotation: ^2.1.1
+  
+  # hooks
+  flutter_hooks: ^0.18.6
+
+  # riverpod
+  hooks_riverpod: ^2.3.6
+
+  # For DateTime
+  intl: ^0.18.0
+
+  # Gap
+  gap: ^3.0.1
+
+  # Web launcher
+  universal_html: ^2.2.3
+
+dev_dependencies:
+  # For Test
+  flutter_test:
+    sdk: flutter
+  flutter_hooks_test: ^0.0.4
+  mocktail: ^0.3.0
+
+  # 自動生成
+  auto_route_generator: ^7.1.1
+  build_runner: ^2.4.5
+  freezed: ^2.3.5
+  json_serializable: ^6.7.0
+  riverpod_generator: ^2.2.3
+
+  # Linter
+  very_good_analysis: ^5.0.0+1
+
+flutter:
+  uses-material-design: true

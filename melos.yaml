@@ -1,0 +1,178 @@
+name: yakyulog
+
+packages:
+  - packages/**
+
+command:
+  bootstrap:
+    hooks:
+      # melos bootstrap の後に実行してくれる
+      post:
+        run: |
+          melos gen
+          melos l10n
+        description: melos gen
+
+  clean:
+    hooks:
+      # melos clean の後に実行してくれる
+      post:
+        run: |
+          melos exec -c 6 -- flutter clean
+        description: flutter clean
+scripts:
+  refresh:
+    run: |
+      melos clean
+      melos bootstrap
+    description: melos clean & bootstrap
+  
+  get:
+    run: |
+      melos exec -c 6 -- flutter pub get
+    description: flutter pub get
+
+  pod:
+    run: |
+      pod install --repo-update --project-directory=packages/app/ios/
+    packageFilters:
+      scope:
+        - app
+    description: pod install --repo-update --project-directory=packages/app/ios/
+
+  upgrade:
+    run: melos exec -c 6 -- flutter pub upgrade
+    description: flutter pub upgrade
+
+  analyze:
+    run: |
+      melos analyze:flutter
+      melos analyze:custom_lint
+    description: flutter analyze & custom_lint
+
+  analyze:flutter:
+    run: |
+      melos exec -c 6 -- flutter analyze
+    description: flutter analyze
+
+  analyze:custom_lint:
+    run: melos exec -c 6 -- custom_lint
+    description: flutter custom_lint
+
+  # --fatal-infos --fatal-warnings info も warning でもエラーにする
+  analyze:check:
+    run: |
+      melos exec -c 6 -- flutter analyze --fatal-infos --fatal-warnings
+      melos exec -c 6 -- custom_lint
+    description: flutter analyze --fatal-infos --fatal-warnings & custom_lint
+
+  fix:
+    run: dart fix --apply
+    description: dart fix --apply
+
+  fix:check:
+    run: dart fix --dry-run
+    description: dart fix --dry-run
+
+  format:
+    run: |
+      melos format:dart:all
+      melos format:arb:all
+      melos fix
+    description: melos format:dart:all format:arb:all fix
+
+  # --set-exit-if-changed 変更があったらエラーにする
+  format:check:
+    run: |
+      find . -name '*.dart' \
+        ! -path '*/build/*' \
+        ! -path '*/l10n/*.dart' \
+        ! -path '*/generated_*.dart' \
+        ! -path '*.g.dart' \
+        ! -path '*/.*/*' \
+        | xargs dart format --set-exit-if-changed {} \;
+    exec:
+      concurrency: 6
+    description: dart format --set-exit-if-changed .
+
+  format:dart:
+    run: dart format
+    description: dart format
+
+  format:dart:all:
+    run: melos format:dart '.'
+    description: dart format .
+
+  # .arb ファイル内のソート
+  format:arb:
+    run: melos exec -c 1 -- arb_utils sort
+    packageFilters:
+      dependsOn: flutter_localizations
+    description: dart pub global run arb_utils:sort
+
+  format:arb:all:
+    run: melos format:arb 'lib/l10n/*.arb'
+    packageFilters:
+      dependsOn: flutter_localizations
+    description: dart pub global run arb_utils:sort lib/l10n/*.arb    
+
+  gen:
+    run: melos exec -c 8 -- flutter pub run build_runner build --delete-conflicting-outputs
+    packageFilters:
+      dependsOn: build_runner
+    description: flutter pub run build_runner build --delete-conflicting-outputs
+
+  l10n:
+    run: melos exec -c 8 -- flutter gen-l10n
+    packageFilters:
+      dependsOn: flutter_localizations
+    description: flutter gen-l10n
+
+  watch:
+    run: melos exec -c 8 -- flutter pub run build_runner watch –-delete-conflicting-outputs
+    packageFilters:
+      dependsOn: build_runner
+    description: flutter pub run build_runner watch --delete-conflicting-outputs
+
+  # dev で実行
+  run:dev:
+    run: flutter run --dart-define-from-file=define/flavor/dev/common.json --dart-define-from-file=define/flavor/dev/firebase_options.json
+    packageFilters:
+      scope:
+        - app
+    description: flutter run --dart-define-from-file=define/flavor/dev/common.json --dart-define-from-file=define/flavor/dev/firebase_options.json
+
+  # prd で実行
+  run:prd:
+    run: flutter run --dart-define-from-file=define/flavor/prd/common.json --dart-define-from-file=define/flavor/prd/firebase_options.json
+    description: flutter run --dart-define-from-file=define/flavor/prd/common.json --dart-define-from-file=define/flavor/prd/firebase_options.json
+
+  # stg で実行
+  run:stg:
+    run: flutter run --dart-define-from-file=define/flavor/stg/common.json --dart-define-from-file=define/flavor/stg/firebase_options.json
+    description: flutter run --dart-define-from-file=define/flavor/stg/common.json --dart-define-from-file=define/flavor/stg/firebase_options.json
+
+  test:prepare:
+    run: rm -rf test/ && mkdir -p test/ && find . -type f -name '*_test.dart' -exec cp {} test/ \;
+    exec:
+      concurrency: 1
+    description: rm -rf test/ && mkdir -p test/ && find . -type f -name '*_test.dart' -exec cp {} test/ \;
+
+  test:prepare:coverage:
+    run: rm -rf test/ && mkdir -p test/ && find . -type f -name '*_test.dart' -exec mv {} test/ \;
+    exec:
+      concurrency: 1
+    description: rm -rf test/ && mkdir -p test/ && find . -type f -name '*_test.dart' -exec mv {} test/ \;
+
+  test:
+    run: |
+      melos test:prepare
+      melos exec -c 8 -- flutter test
+    description: flutter test
+
+  test:coverage:
+    run: |
+      melos test:prepare:coverage
+      melos exec -c 8 -- flutter test --coverage
+    description: flutter test --coverage
+

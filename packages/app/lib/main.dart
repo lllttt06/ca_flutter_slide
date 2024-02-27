@@ -1,0 +1,39 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:yakyulog/l10n/l10n.dart';
+import 'package:yakyulog/route/app_route.dart';
+
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized と runApp の Zone が異なる時は
+  // Fatal Error にする
+  // https://docs.flutter.dev/release/breaking-changes/zone-errors
+  BindingBase.debugZoneErrorsAreFatal = true;
+
+  if (kReleaseMode) {
+    // リリースビルドではログを表示しない
+    debugPrint = (String? message, {int? wrapWidth}) {};
+  }
+
+  runApp(const ProviderScope(child: MyApp()));
+}
+
+class MyApp extends HookConsumerWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(appRouterProvider);
+
+    return MaterialApp.router(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      supportedLocales: L10n.supportedLocales,
+      localizationsDelegates: L10n.localizationsDelegates,
+      routerDelegate: router.delegate(),
+      routeInformationParser: router.defaultRouteParser(),
+    );
+  }
+}

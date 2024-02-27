@@ -1,0 +1,49 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.AppleDouble
+.LSOverride
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# Node
+logs
+npm-debug.log*
+.pnpm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Dart
+.dart_tool/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/.gitignore
+.idea/dictionaries/
+.idea/libraries/
+.idea/kotlinc.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/saveactions_settings.xml
+.idea/runConfigurations.xml
+.idea/runConfigurations/melos*.xml
+
+# Product related
+screenshots/
+
+# reg-suit
+.reg/
+
+# Maestro
+.maestro-flows/
