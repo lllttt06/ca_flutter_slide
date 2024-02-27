@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:ca_flutter_slide/ui/screen/root/root_screen.dart';
 import 'package:ca_flutter_slide/ui/screen/setting/setting_screen.dart';
-import 'package:ca_flutter_slide/ui/screen/slides/slide_screen.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/slide_screen.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_route.g.dart';
 part 'app_route.gr.dart';
@@ -19,20 +19,13 @@ class AppRouter extends _$AppRouter implements AutoRouteGuard {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          path: '/',
-          page: RootRoute.page,
+          path: '/slide',
+          page: SlideRoute.page,
           initial: true,
-          children: [
-            AutoRoute(
-              path: 'slide',
-              page: SlideRoute.page,
-              initial: true,
-            ),
-            AutoRoute(
-              path: 'setting',
-              page: SettingRoute.page,
-            )
-          ],
+        ),
+        AutoRoute(
+          path: '/setting',
+          page: SettingRoute.page,
         ),
       ];
 

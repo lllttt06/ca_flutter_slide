@@ -5,9 +5,6 @@ import 'package:ca_flutter_slide/l10n/l10n.dart';
 import 'package:ca_flutter_slide/route/app_route.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized と runApp の Zone が異なる時は
-  // Fatal Error にする
-  // https://docs.flutter.dev/release/breaking-changes/zone-errors
   BindingBase.debugZoneErrorsAreFatal = true;
 
   if (kReleaseMode) {

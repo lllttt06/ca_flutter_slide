@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ca_flutter_slide/ui/component/default_container.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/self_introduction_slide.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/title_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -14,6 +16,12 @@ class SlideScreen extends HookWidget {
     return DefaultContainer(
       screenName: 'SlideScreen',
       child: FlutterDeckApp(
+        // speakerInfo: const FlutterDeckSpeakerInfo(
+        //   name: 'John Doe',
+        //   description: 'CEO of flutter_deck',
+        //   socialHandle: '@john_doe',
+        //   imagePath: '',
+        // ),
         configuration: FlutterDeckConfiguration(
           background: const FlutterDeckBackgroundConfiguration(
             light: FlutterDeckBackground.solid(Color(0xFFB5FFFC)),
@@ -57,27 +65,9 @@ class SlideScreen extends HookWidget {
         ),
         slides: const [
           TitleSlide(),
+          SelfIntroductionSlide(),
         ],
       ),
-    );
-  }
-}
-
-class TitleSlide extends FlutterDeckSlideWidget {
-  const TitleSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/title-slide',
-            title: 'Title slide',
-            footer: FlutterDeckFooterConfiguration(showFooter: false),
-          ),
-        );
-
-  @override
-  FlutterDeckSlide build(BuildContext context) {
-    return FlutterDeckSlide.title(
-      title: 'Here goes the title of the slide',
-      subtitle: 'Here goes the subtitle of the slide (optional)',
     );
   }
 }
