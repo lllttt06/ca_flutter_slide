@@ -1,7 +1,6 @@
 {
   "flavor": "stg",
-  "appName": "YAKYULOG STG",
-  "androidAppId": "com.lily17.yakyulog.stg",
-  "iOSBundleId": "com.lily17.yakyulog.stg",
-
+  "appName": "CA Flutter Slide",
+  "androidAppId": "com.lily17.ca_flutter_slide",
+  "iOSBundleId": "com.lily17.ca_flutter_slide"
 }

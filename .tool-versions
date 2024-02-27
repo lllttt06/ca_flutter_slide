@@ -1,6 +1,6 @@
-dart 3.1.0
-flutter 3.13.1-stable
-pnpm 8.6.0
+dart 3.2.5
+flutter 3.16.8-stable
+pnpm 8.7.1
 ruby 3.2.2
 bundler 2.4.12
-cocoapods 1.12.1
+cocoapods 1.13.0

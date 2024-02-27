@@ -1,4 +1,4 @@
-name: yakyulog
+name: ca_flutter_slide
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:yakyulog/ui/component/default_container.dart';
+import 'package:ca_flutter_slide/ui/component/default_container.dart';
 
 @RoutePage()
 class SettingScreen extends HookWidget {

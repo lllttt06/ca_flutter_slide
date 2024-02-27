@@ -1,7 +1,6 @@
 {
   "flavor": "dev",
-  "appName": "YAKYULOG DEV",
-  "androidAppId": "com.lily17.yakyulog.dev",
-  "iOSBundleId": "com.lily17.yakyulog.dev",
-
+  "appName": "CA Flutter Slide",
+  "androidAppId": "com.lily17.ca_flutter_slide",
+  "iOSBundleId": "com.lily17.ca_flutter_slide"
 }

@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:yakyulog/ui/screen/home/home_screen.dart';
-import 'package:yakyulog/ui/screen/root/root_screen.dart';
-import 'package:yakyulog/ui/screen/setting/setting_screen.dart';
+import 'package:ca_flutter_slide/ui/screen/root/root_screen.dart';
+import 'package:ca_flutter_slide/ui/screen/setting/setting_screen.dart';
+import 'package:ca_flutter_slide/ui/screen/slides/slide_screen.dart';
 
 part 'app_route.g.dart';
 part 'app_route.gr.dart';
@@ -24,8 +24,8 @@ class AppRouter extends _$AppRouter implements AutoRouteGuard {
           initial: true,
           children: [
             AutoRoute(
-              path: 'home',
-              page: HomeRoute.page,
+              path: 'slide',
+              page: SlideRoute.page,
               initial: true,
             ),
             AutoRoute(

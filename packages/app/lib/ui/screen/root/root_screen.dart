@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:yakyulog/route/app_route.dart';
+import 'package:ca_flutter_slide/route/app_route.dart';
 
 @RoutePage()
 class RootScreen extends StatelessWidget {
@@ -9,7 +9,7 @@ class RootScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      routes: const [HomeRoute(), SettingRoute()],
+      routes: const [SlideRoute(), SettingRoute()],
       bottomNavigationBuilder: (_, tabsRouter) {
         return NavigationBar(
           selectedIndex: tabsRouter.activeIndex,

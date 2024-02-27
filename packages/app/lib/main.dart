@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:yakyulog/l10n/l10n.dart';
-import 'package:yakyulog/route/app_route.dart';
+import 'package:ca_flutter_slide/l10n/l10n.dart';
+import 'package:ca_flutter_slide/route/app_route.dart';
 
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized と runApp の Zone が異なる時は

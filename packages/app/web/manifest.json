@@ -1,6 +1,6 @@
 {
-    "name": "yakyulog",
-    "short_name": "yakyulog",
+    "name": "ca_flutter_slide",
+    "short_name": "ca_flutter_slide",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
