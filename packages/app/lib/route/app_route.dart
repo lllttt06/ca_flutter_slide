@@ -19,7 +19,7 @@ class AppRouter extends _$AppRouter implements AutoRouteGuard {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          path: '/slide',
+          path: '/',
           page: SlideRoute.page,
           initial: true,
         ),
