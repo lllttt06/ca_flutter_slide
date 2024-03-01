@@ -1,7 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
-import 'package:ca_flutter_slide/state/citation_state.dart';
-import 'package:ca_flutter_slide/ui/component/image_with_citation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -36,14 +34,15 @@ class InteractiveAnimationSlide1 extends FlutterDeckSlideWidget {
                       style: context.text.displayLarge,
                     ),
                     const Gap(40),
-                    CitedWidget(
-                      description: '吉田航己 / Yoshida Koki',
-                      citation: const Citation(
-                        description: '株式会社サイバーエージェント 2023 年度入社',
-                        url: '',
-                      ),
-                      child: Assets.images.self.image(width: 100, height: 100),
-                    ),
+                    Assets.images.duolingoInteractive.image(),
+                    // CitedWidget(
+                    //   description: '吉田航己 / Yoshida Koki',
+                    //   citation: const Citation(
+                    //     description: '株式会社サイバーエージェント 2023 年度入社',
+                    //     url: '',
+                    //   ),
+                    //   child: Assets.images.self.image(width: 100, height: 100),
+                    // ),
                   ],
                 ),
               ),
