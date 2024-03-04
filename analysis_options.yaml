@@ -2,10 +2,7 @@ include: package:very_good_analysis/analysis_options.yaml
 
 linter:
   rules:
-    # Dart Doc のマストを警告を除外
     public_member_api_docs: false
-    # pubspec.yaml の定義順の警告を除外
     sort_pub_dependencies: false
-    # lib/ 内で dev_dependencies のパッケージを利用している場合の警告を除外
     depend_on_referenced_packages: false
 

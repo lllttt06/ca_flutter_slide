@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// 引用付きの Widget
-class CitedWidget extends HookConsumerWidget {
-  const CitedWidget({
+class CitationContainer extends HookConsumerWidget {
+  const CitationContainer({
     required this.child,
     required this.description,
     required this.citation,
