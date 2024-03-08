@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/interactive_animation_slide.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/rive_flutter_sample_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/self_introduction_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/title_slide.dart';
 import 'package:flutter/material.dart';
@@ -58,6 +59,7 @@ class SlideScreen extends HookWidget {
         SelfIntroductionSlide(),
         InteractiveAnimationSlide1(),
         InteractiveAnimationSlide2(),
+        RiveFlutterSampleSlide(),
       ],
     );
   }

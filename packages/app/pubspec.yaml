@@ -35,10 +35,9 @@ dependencies:
   # Gap
   gap: ^3.0.1
 
-  # Web launcher
-  universal_html: ^2.2.3
-
   flutter_deck: ^0.11.1
+
+  rive: ^0.12.4
 
 dev_dependencies:
   # For Test
@@ -71,3 +70,4 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/rive/

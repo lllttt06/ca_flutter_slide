@@ -1,5 +1,6 @@
 import 'package:ca_flutter_slide/l10n/l10n.dart';
 import 'package:ca_flutter_slide/route/app_route.dart';
+import 'package:ca_flutter_slide/state/citation_state.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/slide_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,9 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
+    final citation = ref.read(citationStateProvider);
+
+    debugPrint('citation: $citation');
 
     return MaterialApp.router(
       theme: ThemeData(

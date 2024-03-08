@@ -42,6 +42,7 @@ class InteractiveAnimationSlide1 extends FlutterDeckSlideWidget {
                           const Citation(description: 'duolingo', url: ''),
                       child: Assets.images.duolingoInteractive.image(
                         width: context.screenSize.width * 0.6,
+                        height: context.screenSize.height * 0.5,
                       ),
                     ),
                   ],

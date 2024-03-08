@@ -1,6 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/state/citation_state.dart';
-import 'package:ca_flutter_slide/ui/hook/use_effect_once.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -19,10 +18,11 @@ class CitationContainer extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    useEffectOnce(() {
-      ref.read(citationStateProvider.notifier).add(citation);
-      return null;
-    });
+    // ref.read(citationStateProvider.notifier).add(citation);
+    // useEffectOnce(() {
+    //   ref.read(citationStateProvider.notifier).add(citation);
+    //   return null;
+    // });
 
     return Column(
       children: [
