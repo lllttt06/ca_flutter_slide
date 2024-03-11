@@ -84,25 +84,7 @@ class InteractiveAnimationSlide2 extends FlutterDeckSlideWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '吉田航己 / Yoshida Koki',
-                    style: context.text.displayMedium,
-                  ),
-                  const Gap(40),
-                  Text(
-                    '株式会社サイバーエージェント 2023 年度入社',
-                    style: context.text.displayMedium,
-                  ),
-                  Text(
-                    'X: @koki8442',
-                    style: context.text.displaySmall,
-                  ),
-                  Text(
-                    'Github: lllttt06',
-                    style: context.text.displaySmall,
-                  ),
-                ],
+                children: [],
               ),
             ],
           ),

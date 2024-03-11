@@ -21,28 +21,58 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
       builder: (context) {
         return Padding(
           padding: const EdgeInsets.all(20),
-          child: Column(
+          child: Table(
             children: [
-              Row(
+              TableRow(
                 children: [
-                  Text(
-                    'いいねボタン',
-                    style: context.text.displayMedium,
+                  TableCell(
+                    child: Column(
+                      children: [
+                        Text(
+                          'いいねボタン',
+                          style: context.text.displayMedium,
+                        ),
+                        const LikeButton(width: 200, height: 200),
+                      ],
+                    ),
                   ),
-                  const LikeButton(width: 200, height: 200),
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    '評価',
-                    style: context.text.displayMedium,
+                  TableCell(
+                    child: Column(
+                      children: [
+                        Text(
+                          '評価',
+                          style: context.text.displayMedium,
+                        ),
+                        const Rating(width: 400, height: 200),
+                      ],
+                    ),
                   ),
-                  const Rating(width: 400, height: 400),
                 ],
               ),
             ],
           ),
+          // child: Column(
+          //   children: [
+          //     Row(
+          //       children: [
+          //         Text(
+          //           'いいねボタン',
+          //           style: context.text.displayMedium,
+          //         ),
+          //         const LikeButton(width: 200, height: 200),
+          //       ],
+          //     ),
+          //     Row(
+          //       children: [
+          //         Text(
+          //           '評価',
+          //           style: context.text.displayMedium,
+          //         ),
+          //         const Rating(width: 400, height: 200),
+          //       ],
+          //     ),
+          //   ],
+          // ),
         );
       },
     );

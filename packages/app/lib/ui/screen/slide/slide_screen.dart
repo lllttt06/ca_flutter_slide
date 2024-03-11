@@ -16,11 +16,9 @@ class SlideScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckApp(
+      lightTheme: FlutterDeckThemeData.dark(),
+      darkTheme: FlutterDeckThemeData.dark(),
       configuration: FlutterDeckConfiguration(
-        // background: const FlutterDeckBackgroundConfiguration(
-        //   light: FlutterDeckBackground.solid(Color(0xFFB5FFFC)),
-        //   dark: FlutterDeckBackground.solid(Color(0xFF16222A)),
-        // ),
         controls: const FlutterDeckControlsConfiguration(
           shortcuts: FlutterDeckShortcutsConfiguration(
             toggleMarker: SingleActivator(

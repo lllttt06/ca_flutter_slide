@@ -1,4 +1,3 @@
-import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -11,9 +10,6 @@ class Rating extends HookWidget {
   final double height;
 
   static const _stateMachineName = 'RatingStateMachine';
-
-  // Rating
-  static const _inputRating = 'Rating';
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +51,10 @@ class Rating extends HookWidget {
             },
           ),
         ),
-        Text(
-          'Rating: ${rating.value}',
-          style: context.text.displaySmall,
-        )
+        // Text(
+        //   'Rating: ${rating.value}',
+        //   style: context.text.displaySmall,
+        // )
       ],
     );
   }
