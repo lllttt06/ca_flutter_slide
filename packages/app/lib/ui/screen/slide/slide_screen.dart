@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/create_rive_animation.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/interactive_animation_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/rive_flutter_sample_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/self_introduction_slide.dart';
@@ -33,7 +34,6 @@ class SlideScreen extends HookWidget {
             ),
           ),
         ),
-        footer: const FlutterDeckFooterConfiguration(showSlideNumbers: true),
         marker: const FlutterDeckMarkerConfiguration(
           color: Colors.cyan,
           strokeWidth: 8,
@@ -47,7 +47,7 @@ class SlideScreen extends HookWidget {
           backgroundColor: Colors.black,
         ),
         slideSize: FlutterDeckSlideSize.fromAspectRatio(
-          aspectRatio: const FlutterDeckAspectRatio.ratio16x10(),
+          aspectRatio: const FlutterDeckAspectRatio.ratio16x9(),
           resolution: FlutterDeckResolution.fromWidth(context.screenSize.width),
         ),
         transition: const FlutterDeckTransition.fade(),
@@ -57,7 +57,9 @@ class SlideScreen extends HookWidget {
         SelfIntroductionSlide(),
         InteractiveAnimationSlide1(),
         InteractiveAnimationSlide2(),
+        InteractiveAnimationSlide3(),
         RiveFlutterSampleSlide(),
+        CreateRiveAnimationSlide(),
       ],
     );
   }

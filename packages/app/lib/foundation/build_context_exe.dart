@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 extension BuildContextExt on BuildContext {
   Size get screenSize => MediaQuery.sizeOf(this);
 
+  // スライド比は 16:9 で固定
+  Size get slideSize => Size(screenSize.width, screenSize.width * 9 / 16);
+
   double get devicePixelRatio => MediaQuery.devicePixelRatioOf(this);
 
   TextScaler get textScaler => MediaQuery.textScalerOf(this);

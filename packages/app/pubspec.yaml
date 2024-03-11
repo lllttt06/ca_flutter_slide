@@ -39,6 +39,8 @@ dependencies:
 
   rive: ^0.12.4
 
+  auto_size_text: ^3.0.0
+
 dev_dependencies:
   # For Test
   flutter_test:

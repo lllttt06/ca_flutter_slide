@@ -1,10 +1,9 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
-import 'package:ca_flutter_slide/state/citation_state.dart';
-import 'package:ca_flutter_slide/ui/component/citation_container.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/like_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 
 class InteractiveAnimationSlide1 extends FlutterDeckSlideWidget {
@@ -12,46 +11,29 @@ class InteractiveAnimationSlide1 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/interactive-animation-slide/1',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'インタラクティブアニメーションとは',
-            ),
           ),
         );
 
   @override
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
-      builder: (context) {
-        return HookBuilder(
-          builder: (context) {
-            return Padding(
-              padding: const EdgeInsets.all(20),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Unlike traditional animation, '
-                      'interactive animation is designed to respond to user input,'
-                      ' creating a more dynamic and engaging experience.',
-                      style: context.text.displayLarge,
-                    ),
-                    CitationContainer(
-                      description: 'duolingo',
-                      citation:
-                          const Citation(description: 'duolingo', url: ''),
-                      child: Assets.images.duolingoInteractive.image(
-                        width: context.screenSize.width * 0.6,
-                        height: context.screenSize.height * 0.5,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-        );
-      },
+      builder: customSlideBuilder(
+        title: 'インタラクティブアニメーションとは',
+        builder: (context) => Column(
+          children: [
+            AutoResizedText(
+              'ユーザーの操作によって動的に変化するアニメーション',
+              textAreaHeight: context.slideSize.height * 0.1,
+              style: context.text.displayMedium,
+            ),
+            Gap(context.slideSize.height * 0.05),
+            LikeButton(
+              width: context.slideSize.height * 0.4,
+              height: context.slideSize.height * 0.4,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -61,35 +43,62 @@ class InteractiveAnimationSlide2 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/interactive-animation-slide/2',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'インタラクティブアニメーションとは',
-            ),
           ),
         );
 
   @override
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
-      builder: (context) {
-        return Center(
-          child: Row(
-            children: [
-              ClipOval(
-                child: Assets.images.self.image(
-                  width: context.screenSize.width * 0.2,
-                  height: context.screenSize.width * 0.2,
-                ),
-              ),
-              const Gap(60),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [],
-              ),
-            ],
+      builder: customSlideBuilder(
+        title: 'インタラクティブアニメーションの利点',
+        builder: (context) => Padding(
+          padding: EdgeInsets.only(bottom: context.slideSize.height * 0.1),
+          child: AutoResizedText(
+            '・特定の行動をユーザーに促せる \n・難しいことをわかりやすく直感的に説明できる \n・楽しいユーザー体験を提供できる',
+            textAreaHeight: context.slideSize.height * 0.7,
+            style: context.text.displayLarge?.copyWith(height: 2),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class InteractiveAnimationSlide3 extends FlutterDeckSlideWidget {
+  const InteractiveAnimationSlide3()
+      : super(
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/interactive-animation-slide/3',
           ),
         );
-      },
+
+  @override
+  FlutterDeckSlide build(BuildContext context) {
+    return FlutterDeckSlide.blank(
+      builder: customSlideBuilder(
+        title: 'インタラクティブアニメーションの利点',
+        builder: (context) => Column(
+          children: [
+            AutoResizedText(
+              '・パイプライン \n・ファイルサイズ',
+              textAreaHeight: context.slideSize.height * 0.2,
+              style: context.text.displayLarge?.copyWith(height: 1.5),
+            ),
+            Gap(context.slideSize.height * 0.05),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Assets.images.rivePipeline.image(
+                  height: context.slideSize.height * 0.45,
+                ),
+                Assets.images.riveFileSize.image(
+                  height: context.slideSize.height * 0.45,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

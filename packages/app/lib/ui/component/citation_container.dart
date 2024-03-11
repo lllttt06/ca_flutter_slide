@@ -1,6 +1,7 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/state/citation_state.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// 引用付きの Widget
@@ -26,7 +27,8 @@ class CitationContainer extends HookConsumerWidget {
 
     return Column(
       children: [
-        child,
+        Expanded(child: child),
+        Gap(context.slideSize.height * 0.01),
         Text(
           description,
           style: context.text.displaySmall,
