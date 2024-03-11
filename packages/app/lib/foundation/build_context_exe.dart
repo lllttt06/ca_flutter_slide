@@ -20,7 +20,10 @@ extension BuildContextExt on BuildContext {
 
   FlutterView get view => View.of(this);
 
-  ColorScheme get color => Theme.of(this).colorScheme;
+  ColorScheme get color => ColorScheme.fromSeed(
+        seedColor: Colors.green,
+        brightness: Theme.of(this).brightness,
+      );
 
   TextTheme get text => Theme.of(this).textTheme;
 }
@@ -46,153 +49,153 @@ extension TextStyleExt on TextStyle {
 
   TextStyle get lightPrimary => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).primary,
       );
 
   TextStyle get lightOnPrimary => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).onPrimary,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).onPrimary,
       );
 
   TextStyle get lightPrimaryContainer => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).primaryContainer,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).primaryContainer,
       );
 
   TextStyle get lightOnPrimaryContainer => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).onPrimaryContainer,
       );
 
   TextStyle get lightSecondary => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).secondary,
       );
 
   TextStyle get lightOnSecondary => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).onSecondary,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).onSecondary,
       );
 
   TextStyle get lightSecondaryContainer => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).secondaryContainer,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).secondaryContainer,
       );
 
   TextStyle get lightOnSecondaryContainer => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).onSecondaryContainer,
       );
 
   TextStyle get lightTertiary => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).tertiary,
       );
 
   TextStyle get lightOnTertiary => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).onTertiary,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).onTertiary,
       );
 
   TextStyle get lightTertiaryContainer => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).tertiaryContainer,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).tertiaryContainer,
       );
 
   TextStyle get lightOnTertiaryContainer => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).onTertiaryContainer,
       );
 
   TextStyle get lightError => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).error,
       );
 
   TextStyle get lightOnError => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).onError,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).onError,
       );
 
   TextStyle get lightErrorContainer => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).errorContainer,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).errorContainer,
       );
 
   TextStyle get lightOnErrorContainer => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).onErrorContainer,
       );
 
   TextStyle get lightOutline => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).outline,
       );
 
   TextStyle get lightOutlineVariant => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).outlineVariant,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).outlineVariant,
       );
 
   TextStyle get lightBackgroundContainer => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).background,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).background,
       );
 
   TextStyle get lightOnBackground => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).onBackground,
       );
 
   TextStyle get lightSurface => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).surface,
       );
 
   TextStyle get lightOnSurface => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).onSurface,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).onSurface,
       );
 
   TextStyle get lightSurfaceVariant => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).surfaceVariant,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).surfaceVariant,
       );
 
   TextStyle get lightOnSurfaceVariant => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).onSurfaceVariant,
       );
 
   TextStyle get lightInverseSurface => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).inverseSurface,
       );
 
   TextStyle get lightOnInverseSurface => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).onInverseSurface,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).onInverseSurface,
       );
 
   TextStyle get lightInversePrimary => copyWith(
-        color: ColorScheme.fromSeed(seedColor: Colors.blue).inversePrimary,
+        color: ColorScheme.fromSeed(seedColor: Colors.green).inversePrimary,
       );
 
   TextStyle get lightShadow => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).shadow,
       );
 
   TextStyle get lightScrim => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).scrim,
       );
 
   TextStyle get lightSurfaceTint => copyWith(
         color: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.green,
         ).surfaceTint,
       );
 }

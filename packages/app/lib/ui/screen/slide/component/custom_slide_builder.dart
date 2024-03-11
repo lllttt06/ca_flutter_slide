@@ -20,7 +20,9 @@ Widget Function(BuildContext) customSlideBuilder({
               width: context.slideSize.width,
               child: AutoSizeText(
                 title,
-                style: context.text.displayLarge?.bold,
+                style: context.text.displayLarge?.semiBold.copyWith(
+                  color: context.color.primary,
+                ),
               ),
             ),
           ),
