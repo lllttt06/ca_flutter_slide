@@ -12,32 +12,28 @@ class LikeButton extends HookWidget {
   static const _stateMachineName = 'LikeStateMachine';
 
   static const _inputPressed = 'Pressed';
-  static const _inputHover = 'Hover';
 
   @override
   Widget build(BuildContext context) {
     final stateMachineController = useRef<StateMachineController?>(null);
-    final hover = useRef<SMIBool?>(null);
     final pressed = useRef<SMIBool?>(null);
 
     return SizedBox(
       width: width,
       height: height,
       child: GestureDetector(
-        onTap: () {
-          pressed.value!.value = !pressed.value!.value;
-        },
+        onTap: () => pressed.value!.value = !pressed.value!.value,
         child: Assets.rive.lightLike.rive(
           onInit: (artboard) {
+            // artboard から StateMachineController を取得
             stateMachineController.value = StateMachineController.fromArtboard(
               artboard,
               _stateMachineName,
             );
+            // artboard に StateMachineController を紐付ける
             artboard.addController(stateMachineController.value!);
 
-            hover.value ??= stateMachineController.value!
-                .findInput<bool>(_inputHover)! as SMIBool;
-            hover.value!.value = true;
+            // StateMachineController から SMIBool を取得
             pressed.value ??= stateMachineController.value!
                 .findInput<bool>(_inputPressed)! as SMIBool;
           },

@@ -1,7 +1,8 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/component/like_button.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/rive/like_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:gap/gap.dart';
@@ -89,12 +90,19 @@ class InteractiveAnimationSlide3 extends FlutterDeckSlideWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Assets.images.rivePipeline.image(
-                  height: context.slideSize.height * 0.45,
+                  height: context.slideSize.height * 0.42,
                 ),
                 Assets.images.riveFileSize.image(
-                  height: context.slideSize.height * 0.45,
+                  height: context.slideSize.height * 0.42,
                 ),
               ],
+            ),
+            Gap(context.slideSize.height * 0.05),
+            LinkText(
+              text: 'Rive 公式の Rive vs Lottie より',
+              url: 'https://rive.app/blog/rive-as-a-lottie-alternative',
+              textAreaHeight: context.slideSize.height * 0.04,
+              style: context.text.displayMedium,
             ),
           ],
         ),

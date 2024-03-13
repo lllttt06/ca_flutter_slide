@@ -1,8 +1,9 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/component/empty.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/component/like_button.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/component/rating.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/rive/empty.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/rive/like_button.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/rive/rating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:gap/gap.dart';
@@ -26,8 +27,9 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
         builder: (context) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AutoResizedText(
-              'Rive 公式の UseCase より引用',
+            LinkText(
+              text: 'Rive 公式の UseCase より',
+              url: 'https://rive.app/use-cases',
               textAreaHeight: textAreaHeight * 2,
               style: context.text.displayMedium,
             ),
@@ -79,64 +81,6 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
           ],
         ),
       ),
-    );
-    return FlutterDeckSlide.blank(
-      builder: (context) {
-        return Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Rive 公式の UseCase より引用',
-                style: context.text.displayMedium,
-              ),
-              Gap(context.slideSize.height * 0.1),
-              Table(
-                children: [
-                  TableRow(
-                    children: [
-                      TableCell(
-                        child: Column(
-                          children: [
-                            Text(
-                              'いいねボタン',
-                              style: context.text.displayMedium,
-                            ),
-                            LikeButton(width: demoWidth, height: demoWidth),
-                          ],
-                        ),
-                      ),
-                      TableCell(
-                        child: Column(
-                          children: [
-                            Text(
-                              'レーティングボタン',
-                              style: context.text.displayMedium,
-                            ),
-                            Rating(width: demoWidth, height: demoWidth),
-                          ],
-                        ),
-                      ),
-                      TableCell(
-                        child: Column(
-                          children: [
-                            Text(
-                              'アニメーション',
-                              style: context.text.displayMedium,
-                            ),
-                            Empty(width: demoWidth, height: demoWidth),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        );
-      },
     );
   }
 }

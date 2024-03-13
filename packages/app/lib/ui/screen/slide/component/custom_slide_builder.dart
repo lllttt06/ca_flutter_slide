@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 Widget Function(BuildContext) customSlideBuilder({
   required String title,
@@ -26,7 +25,7 @@ Widget Function(BuildContext) customSlideBuilder({
               ),
             ),
           ),
-          Gap(context.slideSize.height * 0.05),
+          // Gap(context.slideSize.height * 0.02),
           Expanded(
             child: Align(
               alignment: alignment,
