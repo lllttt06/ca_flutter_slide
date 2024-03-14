@@ -27,11 +27,17 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
         builder: (context) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            LinkText(
-              text: 'Rive 公式の UseCase より',
-              url: 'https://rive.app/use-cases',
-              textAreaHeight: textAreaHeight * 2,
-              style: context.text.displayMedium,
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: context.slideSize.width * 0.02,
+              ),
+              child: LinkText(
+                text: 'Rive 公式の UseCase より',
+                url: 'https://rive.app/use-cases',
+                textAreaHeight: textAreaHeight * 2,
+                style: context.text.displayMedium,
+                alignment: Alignment.centerLeft,
+              ),
             ),
             Gap(context.slideSize.height * 0.1),
             Table(
@@ -44,7 +50,7 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
                           AutoResizedText(
                             'いいね',
                             textAreaHeight: textAreaHeight,
-                            style: context.text.displayMedium,
+                            style: context.text.displayLarge?.bold,
                           ),
                           LikeButton(width: demoWidth, height: demoWidth),
                         ],
@@ -56,7 +62,7 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
                           AutoResizedText(
                             'レーティング',
                             textAreaHeight: textAreaHeight,
-                            style: context.text.displayMedium,
+                            style: context.text.displayLarge?.bold,
                           ),
                           Rating(width: demoWidth, height: demoWidth),
                         ],
@@ -68,7 +74,7 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
                           AutoResizedText(
                             'Empty',
                             textAreaHeight: textAreaHeight,
-                            style: context.text.displayMedium,
+                            style: context.text.displayLarge?.bold,
                           ),
                           Empty(width: demoWidth, height: demoWidth),
                         ],

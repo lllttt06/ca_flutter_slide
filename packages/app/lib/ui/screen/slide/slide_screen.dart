@@ -4,6 +4,7 @@ import 'package:ca_flutter_slide/ui/screen/slide/content/citation_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/create_rive_animation.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/interactive_animation_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/rive_flutter_sample_slide.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/rive_flutter_tips.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/rive_to_flutter.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/self_introduction_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/title_slide.dart';
@@ -66,6 +67,7 @@ class SlideScreen extends HookWidget {
         CreateRiveAnimationSlide(),
         RiveToFlutterSlide1(),
         RiveToFlutterSlide2(),
+        RiveFlutterTipsSlide1(),
         CitationSlide(),
       ],
     );

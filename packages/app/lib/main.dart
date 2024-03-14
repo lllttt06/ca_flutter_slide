@@ -5,16 +5,29 @@ import 'package:ca_flutter_slide/ui/screen/slide/slide_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:syntax_highlight/syntax_highlight.dart';
+
+late final Highlighter dartLightHighlighter;
+late final Highlighter dartDarkHighlighter;
 
 void main() async {
   BindingBase.debugZoneErrorsAreFatal = true;
+  WidgetsFlutterBinding.ensureInitialized();
 
-  if (kReleaseMode) {
-    // リリースビルドではログを表示しない
-    debugPrint = (String? message, {int? wrapWidth}) {};
-  }
+  await Highlighter.initialize(['dart']);
 
-  // runApp(const SlideScreen());
+  final lightTheme = await HighlighterTheme.loadLightTheme();
+  dartLightHighlighter = Highlighter(
+    language: 'dart',
+    theme: lightTheme,
+  );
+
+  final darkTheme = await HighlighterTheme.loadDarkTheme();
+  dartDarkHighlighter = Highlighter(
+    language: 'dart',
+    theme: darkTheme,
+  );
+
   runApp(const ProviderScope(child: SlideScreen()));
 }
 

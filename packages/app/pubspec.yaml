@@ -45,6 +45,7 @@ dependencies:
 
   flutter_svg: ^2.0.9
 
+  syntax_highlight: ^0.3.0
 
 dev_dependencies:
   # For Test

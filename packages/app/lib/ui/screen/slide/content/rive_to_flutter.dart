@@ -1,4 +1,6 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:flutter/material.dart';
@@ -67,13 +69,10 @@ class RiveToFlutterSlide1 extends FlutterDeckSlideWidget {
                   ),
                   const Flexible(
                     flex: 2,
-                    child: FractionallySizedBox(
-                      child: SingleChildScrollView(
-                        child: FlutterDeckCodeHighlight(
-                          code: _code,
-                          language: 'dart',
-                        ),
-                      ),
+                    child: CodeView(
+                      code: _code,
+                      widthFactor: 0.4,
+                      heightFactor: 0.2,
                     ),
                   ),
                 ],
@@ -126,17 +125,11 @@ class RiveToFlutterSlide2 extends FlutterDeckSlideWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                width: context.slideSize.width * 0.5,
-                child: const SingleChildScrollView(
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: FlutterDeckCodeHighlight(
-                      code: _code,
-                      language: 'dart',
-                    ),
-                  ),
-                ),
+              const CGap(widthFactor: 0.02),
+              const CodeView(
+                code: _code,
+                widthFactor: 0.5,
+                heightFactor: 0.8,
               ),
             ],
           ),
