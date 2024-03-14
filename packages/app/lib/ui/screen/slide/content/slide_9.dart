@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/rive/empty.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/rive/like_button.dart';
@@ -20,6 +21,7 @@ class Slide9 extends FlutterDeckSlideWidget {
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
+        pageNumber: 9,
         title: 'Rive でアニメーション作成',
         builder: (context) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,

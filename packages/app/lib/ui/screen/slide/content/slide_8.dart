@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/rive/empty.dart';
@@ -21,6 +22,7 @@ class Slide8 extends FlutterDeckSlideWidget {
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
+        pageNumber: 8,
         title: 'Flutter での活用事例',
         builder: (context) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,

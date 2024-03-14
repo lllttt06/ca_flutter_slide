@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
@@ -15,20 +16,14 @@ class Slide6 extends FlutterDeckSlideWidget {
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
-        title: 'Rive のメリット',
+        pageNumber: 6,
+        title: 'Rive で Flutter アニメーションのデメリットを解決！',
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
           child: Column(
             children: [
-              const CGap(heightFactor: 0.1),
-              AutoResizedText(
-                'Flutter アニメーションのデメリットを解決できる！',
-                textAreaHeight: context.slideSize.height * 0.08,
-                style: context.text.displayLarge?.semiBold,
-                alignment: Alignment.centerLeft,
-              ),
-              const CGap(heightFactor: 0.05),
+              const CGap(heightFactor: 0.12),
               AutoResizedText(
                 '・細かいアニメーションを作るのが難しい',
                 textAreaHeight: context.slideSize.height * 0.08,
@@ -36,7 +31,7 @@ class Slide6 extends FlutterDeckSlideWidget {
                 alignment: Alignment.centerLeft,
               ),
               AutoResizedText(
-                '→ .riv ファイルを読み込むだけ',
+                '　→ .riv ファイルを読み込むだけ',
                 textAreaHeight: context.slideSize.height * 0.08,
                 style: context.text.displayLarge?.copyWith(height: 1.5),
                 alignment: Alignment.centerLeft,
@@ -51,7 +46,7 @@ class Slide6 extends FlutterDeckSlideWidget {
               Row(
                 children: [
                   AutoResizedText(
-                    '→ 有料版 : ',
+                    '　→ 有料版 : ',
                     textAreaHeight: context.slideSize.height * 0.08,
                     style: context.text.displayLarge?.copyWith(height: 1.5),
                     alignment: Alignment.centerLeft,
@@ -73,7 +68,7 @@ class Slide6 extends FlutterDeckSlideWidget {
                 ],
               ),
               AutoResizedText(
-                '→ 無料版 : .rev ファイルを Rive Editor で確認',
+                '　→ 無料版 : Rive Editor で確認',
                 textAreaHeight: context.slideSize.height * 0.08,
                 style: context.text.displayLarge?.copyWith(height: 1.5),
                 alignment: Alignment.centerLeft,

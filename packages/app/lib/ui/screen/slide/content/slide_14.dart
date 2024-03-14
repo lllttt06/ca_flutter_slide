@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -17,6 +18,7 @@ class Slide14 extends FlutterDeckSlideWidget {
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
+        pageNumber: 14,
         title: '実装の tips',
         builder: (context) => Padding(
           padding:

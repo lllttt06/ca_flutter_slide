@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/citation_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_1.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/slide_10.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_11.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_12.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_13.dart';
@@ -15,7 +14,6 @@ import 'package:ca_flutter_slide/ui/screen/slide/content/slide_5.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_6.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_7.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_8.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/slide_9.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -30,6 +28,12 @@ class SlideScreen extends HookWidget {
     return FlutterDeckApp(
       lightTheme: FlutterDeckThemeData.dark(),
       darkTheme: FlutterDeckThemeData.dark(),
+      speakerInfo: const FlutterDeckSpeakerInfo(
+        name: 'Takuya Arita',
+        description: '',
+        socialHandle: '',
+        imagePath: '',
+      ),
       configuration: FlutterDeckConfiguration(
         controls: const FlutterDeckControlsConfiguration(
           shortcuts: FlutterDeckShortcutsConfiguration(
@@ -72,8 +76,8 @@ class SlideScreen extends HookWidget {
         Slide6(),
         Slide7(),
         Slide8(),
-        Slide9(),
-        Slide10(),
+        // Slide9(),
+        // Slide10(),
         Slide11(),
         Slide12(),
         Slide13(),

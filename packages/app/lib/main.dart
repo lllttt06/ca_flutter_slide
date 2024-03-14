@@ -7,26 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:syntax_highlight/syntax_highlight.dart';
 
-late final Highlighter dartLightHighlighter;
-late final Highlighter dartDarkHighlighter;
+late final HighlighterTheme highlightTheme;
 
 void main() async {
   BindingBase.debugZoneErrorsAreFatal = true;
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Highlighter.initialize(['dart']);
+  await Highlighter.initialize(['dart', 'yaml']);
 
-  final lightTheme = await HighlighterTheme.loadLightTheme();
-  dartLightHighlighter = Highlighter(
-    language: 'dart',
-    theme: lightTheme,
-  );
-
-  final darkTheme = await HighlighterTheme.loadDarkTheme();
-  dartDarkHighlighter = Highlighter(
-    language: 'dart',
-    theme: darkTheme,
-  );
+  highlightTheme = await HighlighterTheme.loadDarkTheme();
 
   runApp(const ProviderScope(child: SlideScreen()));
 }

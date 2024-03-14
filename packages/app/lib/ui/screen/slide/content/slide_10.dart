@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
@@ -20,6 +21,7 @@ class Slide10 extends FlutterDeckSlideWidget {
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
+        pageNumber: 10,
         title: 'Flutter での実装',
         builder: (context) => Padding(
           padding:

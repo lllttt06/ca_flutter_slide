@@ -1,16 +1,19 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/main.dart';
 import 'package:flutter/material.dart';
+import 'package:syntax_highlight/syntax_highlight.dart';
 
 class CodeView extends StatelessWidget {
   const CodeView({
     required this.code,
     required this.widthFactor,
     required this.heightFactor,
+    this.language = 'dart',
     super.key,
   });
 
   final String code;
+  final String language;
   final double widthFactor;
   final double heightFactor;
 
@@ -18,6 +21,10 @@ class CodeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final slideSize = context.slideSize;
     final isSmall = slideSize.width < 1000;
+    final highlighter = Highlighter(
+      language: language,
+      theme: highlightTheme,
+    );
     return Container(
       width: slideSize.width * widthFactor,
       height: slideSize.height * heightFactor,
@@ -32,7 +39,7 @@ class CodeView extends StatelessWidget {
       ),
       child: SingleChildScrollView(
         child: Text.rich(
-          dartDarkHighlighter.highlight(code),
+          highlighter.highlight(code),
           style: isSmall ? context.text.bodySmall : context.text.titleLarge,
         ),
       ),

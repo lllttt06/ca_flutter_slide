@@ -1,4 +1,6 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/gen/assets.gen.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -18,6 +20,7 @@ class Slide15 extends FlutterDeckSlideWidget {
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
+        pageNumber: 15,
         title: '実装の tips',
         builder: (context) => Padding(
           padding:
@@ -49,24 +52,33 @@ class Slide15 extends FlutterDeckSlideWidget {
                 ],
               ),
               AutoResizedText(
-                '  SMI value 取得の拡張関数を定義',
+                '  再描画のタイミングを切り分けパフォーマンスを向上させる',
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               const CGap(heightFactor: 0.05),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CodeView(
+                  const CodeView(
                     code: code1,
                     widthFactor: 0.45,
                     heightFactor: 0.43,
                   ),
-                  CodeView(
-                    code: code2,
-                    widthFactor: 0.45,
-                    heightFactor: 0.43,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: context.color.inversePrimary,
+                        width: 2,
+                      ),
+                      color: const Color(0xff1E1E1E),
+                    ),
+                    child: Assets.images.screenshot.image(
+                      fit: BoxFit.cover,
+                      width: context.slideSize.width * 0.45,
+                      height: context.slideSize.height * 0.43,
+                    ),
                   ),
                 ],
               ),
@@ -85,7 +97,6 @@ RepaintBoundary(
         artboard: artboard,
         name: 'LikeStateMachine',
       );
-      // この部分
       pressed.value ??= stateMachineController.value!.findInputBool('Pressed');
     },
   ),

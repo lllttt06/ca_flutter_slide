@@ -1,5 +1,6 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
@@ -16,6 +17,7 @@ class Slide7 extends FlutterDeckSlideWidget {
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
+        pageNumber: 7,
         title: 'Rive のメリット | Lottie との比較',
         builder: (context) => Column(
           children: [

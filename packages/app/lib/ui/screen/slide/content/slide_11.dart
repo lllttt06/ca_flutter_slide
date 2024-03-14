@@ -1,7 +1,9 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -17,20 +19,56 @@ class Slide11 extends FlutterDeckSlideWidget {
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
+        pageNumber: 11,
         title: 'Flutter での実装',
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
           child: Row(
             children: [
-              Expanded(
+              Flexible(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Row(
+                      children: [
+                        AutoResizedText(
+                          '1. ',
+                          textAreaHeight: textAreaHeight,
+                          style: context.text.displayMedium,
+                          alignment: Alignment.centerLeft,
+                        ),
+                        LinkText(
+                          text: 'rive',
+                          url: 'https://pub.dev/packages/rive',
+                          textAreaHeight: textAreaHeight * 1.2,
+                          style: context.text.displayMedium,
+                          alignment: Alignment.centerLeft,
+                        ),
+                        AutoResizedText(
+                          ' パッケージを追加',
+                          textAreaHeight: textAreaHeight,
+                          style: context.text.displayMedium,
+                          alignment: Alignment.centerLeft,
+                        ),
+                      ],
+                    ),
                     AutoResizedText(
-                      'RiveAnimation Widget などを提供する公式 package',
+                      '2. assets/rive に .riv を配置',
                       textAreaHeight: textAreaHeight,
                       style: context.text.displayMedium,
                       alignment: Alignment.centerLeft,
+                    ),
+                    AutoResizedText(
+                      '3. pubspec.yaml に追加',
+                      textAreaHeight: textAreaHeight,
+                      style: context.text.displayMedium,
+                      alignment: Alignment.centerLeft,
+                    ),
+                    const CodeView(
+                      code: pubspec,
+                      widthFactor: 0.3,
+                      heightFactor: 0.2,
                     ),
                   ],
                 ),
@@ -60,7 +98,7 @@ class LikeButton extends HookWidget {
 
     return GestureDetector(
       onTap: () => pressed.value!.value = !pressed.value!.value,
-      child: RiveAnimation(
+      child: RiveAnimation.asset(
         'assets/rive/light_like.riv',
         onInit: (artboard) {
           // artboard から StateMachineController を取得
@@ -79,4 +117,11 @@ class LikeButton extends HookWidget {
   }
 }
   ''';
+
+  static const pubspec = '''
+// pubspec.yaml
+flutter:
+  assets:
+    - assets/rive/
+''';
 }
