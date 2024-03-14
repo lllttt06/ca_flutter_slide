@@ -14,6 +14,7 @@ import 'package:ca_flutter_slide/ui/screen/slide/content/slide_5.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_6.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_7.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_8.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_9.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -76,7 +77,9 @@ class SlideScreen extends HookWidget {
         Slide6(),
         Slide7(),
         Slide8(),
-        // Slide9(),
+        Slide9(),
+        Slide92(),
+        Slide91(),
         // Slide10(),
         Slide11(),
         Slide12(),
