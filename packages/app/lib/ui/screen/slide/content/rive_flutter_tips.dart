@@ -57,7 +57,6 @@ class RiveFlutterTipsSlide1 extends FlutterDeckSlideWidget {
               ),
               const CGap(heightFactor: 0.05),
               const Row(
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CodeView(
