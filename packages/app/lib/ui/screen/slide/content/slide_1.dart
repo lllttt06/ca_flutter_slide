@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-class TitleSlide extends FlutterDeckSlideWidget {
-  const TitleSlide()
+class Slide1 extends FlutterDeckSlideWidget {
+  const Slide1()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/title-slide',
+            route: '/1',
             title: 'Title slide',
             footer: FlutterDeckFooterConfiguration(showFooter: false),
           ),

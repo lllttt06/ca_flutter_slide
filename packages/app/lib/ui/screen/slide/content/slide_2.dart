@@ -6,11 +6,11 @@ import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-class SelfIntroductionSlide extends FlutterDeckSlideWidget {
-  const SelfIntroductionSlide()
+class Slide2 extends FlutterDeckSlideWidget {
+  const Slide2()
       : super(
           configuration:
-              const FlutterDeckSlideConfiguration(route: '/self-introduction'),
+              const FlutterDeckSlideConfiguration(route: '/2'),
         );
 
   @override

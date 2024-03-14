@@ -1,13 +1,21 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/citation_slide.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/create_rive_animation.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/interactive_animation_slide.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/rive_flutter_sample_slide.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/rive_flutter_tips.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/rive_to_flutter.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/self_introduction_slide.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/content/title_slide.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_1.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_10.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_11.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_12.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_13.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_14.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_15.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_2.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_3.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_4.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_5.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_6.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_7.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_8.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_9.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
@@ -56,18 +64,21 @@ class SlideScreen extends HookWidget {
         transition: const FlutterDeckTransition.fade(),
       ),
       slides: const [
-        TitleSlide(),
-        SelfIntroductionSlide(),
-        InteractiveAnimationSlide1(),
-        InteractiveAnimationSlide2(),
-        InteractiveAnimationSlide3(),
-        InteractiveAnimationSlide4(),
-        InteractiveAnimationSlide5(),
-        RiveFlutterSampleSlide(),
-        CreateRiveAnimationSlide(),
-        RiveToFlutterSlide1(),
-        RiveToFlutterSlide2(),
-        RiveFlutterTipsSlide1(),
+        Slide1(),
+        Slide2(),
+        Slide3(),
+        Slide4(),
+        Slide5(),
+        Slide6(),
+        Slide7(),
+        Slide8(),
+        Slide9(),
+        Slide10(),
+        Slide11(),
+        Slide12(),
+        Slide13(),
+        Slide14(),
+        Slide15(),
         CitationSlide(),
       ],
     );

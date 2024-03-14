@@ -1,6 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/rive/empty.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/rive/like_button.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/rive/rating.dart';
@@ -8,12 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:gap/gap.dart';
 
-class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
-  const RiveFlutterSampleSlide()
+class Slide9 extends FlutterDeckSlideWidget {
+  const Slide9()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/rive-flutter-sample',
-          ),
+          configuration: const FlutterDeckSlideConfiguration(route: '/9'),
         );
 
   @override
@@ -23,21 +20,14 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
-        title: 'Flutter での活用事例',
+        title: 'Rive でアニメーション作成',
         builder: (context) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: context.slideSize.width * 0.02,
-              ),
-              child: LinkText(
-                text: 'Rive 公式の UseCase より',
-                url: 'https://rive.app/use-cases',
-                textAreaHeight: textAreaHeight * 2,
-                style: context.text.displayMedium,
-                alignment: Alignment.centerLeft,
-              ),
+            AutoResizedText(
+              'いいねボタンをサンプル',
+              textAreaHeight: textAreaHeight * 2,
+              style: context.text.displayMedium,
             ),
             Gap(context.slideSize.height * 0.1),
             Table(
@@ -50,7 +40,7 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
                           AutoResizedText(
                             'いいね',
                             textAreaHeight: textAreaHeight,
-                            style: context.text.displayLarge?.bold,
+                            style: context.text.displayMedium,
                           ),
                           LikeButton(width: demoWidth, height: demoWidth),
                         ],
@@ -62,7 +52,7 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
                           AutoResizedText(
                             'レーティング',
                             textAreaHeight: textAreaHeight,
-                            style: context.text.displayLarge?.bold,
+                            style: context.text.displayMedium,
                           ),
                           Rating(width: demoWidth, height: demoWidth),
                         ],
@@ -74,7 +64,7 @@ class RiveFlutterSampleSlide extends FlutterDeckSlideWidget {
                           AutoResizedText(
                             'Empty',
                             textAreaHeight: textAreaHeight,
-                            style: context.text.displayLarge?.bold,
+                            style: context.text.displayMedium,
                           ),
                           Empty(width: demoWidth, height: demoWidth),
                         ],

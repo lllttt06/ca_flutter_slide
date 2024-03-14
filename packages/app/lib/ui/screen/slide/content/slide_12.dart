@@ -6,12 +6,10 @@ import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-class RiveFlutterTipsSlide1 extends FlutterDeckSlideWidget {
-  const RiveFlutterTipsSlide1()
+class Slide12 extends FlutterDeckSlideWidget {
+  const Slide12()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/rive-flutter-tips/1',
-          ),
+          configuration: const FlutterDeckSlideConfiguration(route: '/12'),
         );
 
   @override
@@ -85,11 +83,11 @@ RiveAnimation.asset(
   onInit: (artboard) {
     stateMachineController.value = StateMachineController.fromArtboard(
       artboard,
-      _stateMachineName,
+      'LikeStateMachine',
     );
     artboard.addController(stateMachineController.value!);
     pressed.value ??= stateMachineController.value!
-        .findInput<bool>(_inputPressed)! as SMIBool;
+        .findInput<bool>('Pressed')! as SMIBool;
   },
 );
   ''';
@@ -100,11 +98,11 @@ Assets.rive.lightLike.rive(
   onInit: (artboard) {
     stateMachineController.value = StateMachineController.fromArtboard(
       artboard,
-      _stateMachineName,
+      'LikeStateMachine',
     );
     artboard.addController(stateMachineController.value!);
     pressed.value ??= stateMachineController.value!
-        .findInput<bool>(_inputPressed)! as SMIBool;
+        .findInput<bool>('Pressed')! as SMIBool;
   },
 );
   ''';
