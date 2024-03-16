@@ -2,11 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/citation_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_1.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_10.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_11.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_12.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_13.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_14.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_15.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_16.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_2.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_3.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_4.dart';
@@ -78,14 +80,13 @@ class SlideScreen extends HookWidget {
         Slide7(),
         Slide8(),
         Slide9(),
-        Slide92(),
-        Slide91(),
-        // Slide10(),
+        Slide10(),
         Slide11(),
         Slide12(),
         Slide13(),
         Slide14(),
         Slide15(),
+        Slide16(),
         CitationSlide(),
       ],
     );

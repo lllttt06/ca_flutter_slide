@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/gen/assets.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
@@ -7,12 +8,12 @@ import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-class Slide13 extends FlutterDeckSlideWidget {
-  const Slide13()
+class Slide16 extends FlutterDeckSlideWidget {
+  const Slide16()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/13',
-            title: '実装の tips 1',
+            route: '/16',
+            title: '実装の tips 3',
           ),
         );
 
@@ -22,7 +23,7 @@ class Slide13 extends FlutterDeckSlideWidget {
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
-        pageNumber: 13,
+        pageNumber: 16,
         title: '実装の tips',
         builder: (context) => Padding(
           padding:
@@ -32,20 +33,21 @@ class Slide13 extends FlutterDeckSlideWidget {
               Row(
                 children: [
                   AutoResizedText(
-                    '1. ',
+                    '3. ',
                     textAreaHeight: textAreaHeight,
                     style: context.text.displayMedium,
                     alignment: Alignment.centerLeft,
                   ),
                   LinkText(
-                    text: 'flutter_gen',
-                    url: 'https://pub.dev/packages/flutter_gen',
+                    text: 'RepaintBoundary',
+                    url:
+                        'https://api.flutter.dev/flutter/widgets/RepaintBoundary-class.html',
                     textAreaHeight: textAreaHeight,
                     style: context.text.displayMedium,
                     alignment: Alignment.centerLeft,
                   ),
                   AutoResizedText(
-                    ' を使う',
+                    ' で不要な Repaint を抑える',
                     textAreaHeight: textAreaHeight,
                     style: context.text.displayMedium,
                     alignment: Alignment.centerLeft,
@@ -53,24 +55,33 @@ class Slide13 extends FlutterDeckSlideWidget {
                 ],
               ),
               AutoResizedText(
-                '  asset を文字列ではなく型安全に使用できる',
+                '  再描画のタイミングを切り分けパフォーマンスを向上させる',
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               const CGap(heightFactor: 0.05),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CodeView(
-                    code: _codeBefore,
-                    widthFactor: 0.4,
+                  const CodeView(
+                    code: code1,
+                    widthFactor: 0.45,
                     heightFactor: 0.43,
                   ),
-                  CodeView(
-                    code: _codeAfter,
-                    widthFactor: 0.4,
-                    heightFactor: 0.43,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: context.color.inversePrimary,
+                        width: 2,
+                      ),
+                      color: const Color(0xff1E1E1E),
+                    ),
+                    child: Assets.images.screenshot.image(
+                      fit: BoxFit.cover,
+                      width: context.slideSize.width * 0.45,
+                      height: context.slideSize.height * 0.43,
+                    ),
                   ),
                 ],
               ),
@@ -81,34 +92,29 @@ class Slide13 extends FlutterDeckSlideWidget {
     );
   }
 
-  static const _codeBefore = '''
-// BEFORE
-RiveAnimation.asset(
-  'assets/rive/light_like.riv',
-  onInit: (artboard) {
-    stateMachineController.value = StateMachineController.fromArtboard(
-      artboard,
-      'LikeStateMachine',
-    );
-    artboard.addController(stateMachineController.value!);
-    pressed.value ??= stateMachineController.value!
-        .findInput<bool>('Pressed')! as SMIBool;
-  },
+  static const code1 = '''
+RepaintBoundary(
+  child: Assets.rive.lightLike.rive(
+    onInit: (artboard) {
+      stateMachineController.value = initStateMachineController(
+        artboard: artboard,
+        name: 'LikeStateMachine',
+      );
+      pressed.value ??= stateMachineController.value!.findInputBool('Pressed');
+    },
+  ),
 );
   ''';
 
-  static const _codeAfter = '''
-// AFTER
-Assets.rive.lightLike.rive(
-  onInit: (artboard) {
-    stateMachineController.value = StateMachineController.fromArtboard(
-      artboard,
-      'LikeStateMachine',
-    );
-    artboard.addController(stateMachineController.value!);
-    pressed.value ??= stateMachineController.value!
-        .findInput<bool>('Pressed')! as SMIBool;
-  },
-);
+  static const code2 = '''
+// rive_ext.dart
+extension StateMachineControllerExt on StateMachineController {
+  // SMI = State Machine Instance
+  SMIBool findInputBool(String name) => findInput<bool>(name)! as SMIBool;
+  SMINumber findInputNumber(String name) =>
+      findInput<double>(name)! as SMINumber;
+  SMITrigger findInputTrigger(String name) =>
+      findInput<bool>(name)! as SMITrigger;
+}
   ''';
 }

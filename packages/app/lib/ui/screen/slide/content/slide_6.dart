@@ -70,20 +70,20 @@ class Slide6 extends FlutterDeckSlideWidget {
               Row(
                 children: [
                   AutoResizedText(
-                    '　→ 無料版 : Rive Editor で確認、',
+                    '　→ 無料版 : ',
                     textAreaHeight: context.slideSize.height * 0.08,
                     style: context.text.displayLarge?.copyWith(height: 1.5),
                     alignment: Alignment.centerLeft,
                   ),
                   LinkText(
-                    text: '非公式サイト',
-                    url: 'http://imzachy.com/rive-and-lottie/rive.html',
+                    text: 'Preview',
+                    url: 'https://rive.app/preview/',
                     textAreaHeight: context.slideSize.height * 0.08,
                     style: context.text.displayLarge?.copyWith(height: 1.5),
                     alignment: Alignment.centerLeft,
                   ),
                   AutoResizedText(
-                    'で確認',
+                    ' で確認 (.riv ファイルが必要)',
                     textAreaHeight: context.slideSize.height * 0.08,
                     style: context.text.displayLarge?.copyWith(height: 1.5),
                     alignment: Alignment.centerLeft,

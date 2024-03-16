@@ -1,17 +1,18 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
-import 'package:ca_flutter_slide/gen/assets.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 class Slide15 extends FlutterDeckSlideWidget {
   const Slide15()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/15'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/15',
+            title: '実装の tips 2-2',
+          ),
         );
 
   @override
@@ -27,58 +28,31 @@ class Slide15 extends FlutterDeckSlideWidget {
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
           child: Column(
             children: [
-              Row(
-                children: [
-                  AutoResizedText(
-                    '3. ',
-                    textAreaHeight: textAreaHeight,
-                    style: context.text.displayMedium,
-                    alignment: Alignment.centerLeft,
-                  ),
-                  LinkText(
-                    text: 'RepaintBoundary',
-                    url:
-                        'https://api.flutter.dev/flutter/widgets/RepaintBoundary-class.html',
-                    textAreaHeight: textAreaHeight,
-                    style: context.text.displayMedium,
-                    alignment: Alignment.centerLeft,
-                  ),
-                  AutoResizedText(
-                    ' で不要な Repaint を抑える',
-                    textAreaHeight: textAreaHeight,
-                    style: context.text.displayMedium,
-                    alignment: Alignment.centerLeft,
-                  ),
-                ],
+              AutoResizedText(
+                '2. よく使うロジックをまとめる',
+                textAreaHeight: textAreaHeight,
+                style: context.text.displayMedium,
+                alignment: Alignment.centerLeft,
               ),
               AutoResizedText(
-                '  再描画のタイミングを切り分けパフォーマンスを向上させる',
+                '  SMI value 取得の拡張関数を定義',
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               const CGap(heightFactor: 0.05),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const CodeView(
+                  CodeView(
                     code: code1,
                     widthFactor: 0.45,
                     heightFactor: 0.43,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: context.color.inversePrimary,
-                        width: 2,
-                      ),
-                      color: const Color(0xff1E1E1E),
-                    ),
-                    child: Assets.images.screenshot.image(
-                      fit: BoxFit.cover,
-                      width: context.slideSize.width * 0.45,
-                      height: context.slideSize.height * 0.43,
-                    ),
+                  CodeView(
+                    code: code2,
+                    widthFactor: 0.45,
+                    heightFactor: 0.43,
                   ),
                 ],
               ),
@@ -90,16 +64,16 @@ class Slide15 extends FlutterDeckSlideWidget {
   }
 
   static const code1 = '''
-RepaintBoundary(
-  child: Assets.rive.lightLike.rive(
-    onInit: (artboard) {
-      stateMachineController.value = initStateMachineController(
-        artboard: artboard,
-        name: 'LikeStateMachine',
-      );
-      pressed.value ??= stateMachineController.value!.findInputBool('Pressed');
-    },
-  ),
+Assets.rive.lightLike.rive(
+  onInit: (artboard) {
+    stateMachineController.value = initStateMachineController(
+      artboard: artboard,
+      name: 'LikeStateMachine',
+    );
+    // この部分
+    pressed.value ??= stateMachineController.value!
+        .findInput<bool>('Pressed')! as SMIBool;
+  },
 );
   ''';
 

@@ -1,10 +1,10 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/gen/assets.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
-import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 class Slide11 extends FlutterDeckSlideWidget {
@@ -15,113 +15,76 @@ class Slide11 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    final textAreaHeight = context.slideSize.height * 0.1;
+    final s = context.slideSize;
 
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
         pageNumber: 11,
-        title: 'Flutter での実装',
-        builder: (context) => Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
-          child: Row(
-            children: [
-              Flexible(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        AutoResizedText(
-                          '1. ',
-                          textAreaHeight: textAreaHeight,
-                          style: context.text.displayMedium,
-                          alignment: Alignment.centerLeft,
-                        ),
-                        LinkText(
-                          text: 'rive',
-                          url: 'https://pub.dev/packages/rive',
-                          textAreaHeight: textAreaHeight * 1.2,
-                          style: context.text.displayMedium,
-                          alignment: Alignment.centerLeft,
-                        ),
-                        AutoResizedText(
-                          ' パッケージを追加',
-                          textAreaHeight: textAreaHeight,
-                          style: context.text.displayMedium,
-                          alignment: Alignment.centerLeft,
-                        ),
-                      ],
-                    ),
-                    AutoResizedText(
-                      '2. assets/rive に .riv を配置',
-                      textAreaHeight: textAreaHeight,
-                      style: context.text.displayMedium,
-                      alignment: Alignment.centerLeft,
-                    ),
-                    AutoResizedText(
-                      '3. pubspec.yaml に追加',
-                      textAreaHeight: textAreaHeight,
-                      style: context.text.displayMedium,
-                      alignment: Alignment.centerLeft,
-                    ),
-                    const CodeView(
-                      code: pubspec,
-                      widthFactor: 0.3,
-                      heightFactor: 0.2,
-                    ),
-                  ],
+        title: 'Rive でアニメーション作成',
+        builder: (context) => Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AutoResizedText(
+                  'Rive のファイル形式',
+                  textAreaHeight: s.height * 0.1,
+                  textAreaWidth: s.width * 0.4,
+                  style: context.text.displayMedium,
+                  alignment: Alignment.centerLeft,
                 ),
-              ),
-              const CGap(widthFactor: 0.02),
-              const CodeView(
-                code: _code,
-                widthFactor: 0.5,
-                heightFactor: 0.8,
-              ),
-            ],
-          ),
+                AutoResizedText(
+                  '・riv ファイル',
+                  textAreaHeight: s.height * 0.1,
+                  textAreaWidth: s.width * 0.4,
+                  style: context.text.displayMedium,
+                  alignment: Alignment.centerLeft,
+                ),
+                AutoResizedText(
+                  '　Runtime 用のファイル',
+                  textAreaHeight: s.height * 0.07,
+                  textAreaWidth: s.width * 0.4,
+                  style: context.text.displayMedium,
+                  alignment: Alignment.centerLeft,
+                ),
+                AutoResizedText(
+                  '　Flutter ではこちらを使用',
+                  textAreaHeight: s.height * 0.07,
+                  textAreaWidth: s.width * 0.4,
+                  style: context.text.displayMedium,
+                  alignment: Alignment.centerLeft,
+                ),
+                const CGap(heightFactor: 0.02),
+                AutoResizedText(
+                  '・rev ファイル',
+                  textAreaHeight: s.height * 0.1,
+                  textAreaWidth: s.width * 0.4,
+                  style: context.text.displayMedium,
+                  alignment: Alignment.centerLeft,
+                ),
+                AutoResizedText(
+                  '　元データのファイル',
+                  textAreaHeight: s.height * 0.07,
+                  textAreaWidth: s.width * 0.4,
+                  style: context.text.displayMedium,
+                  alignment: Alignment.centerLeft,
+                ),
+                AutoResizedText(
+                  '　Editor ではこちらを使用',
+                  textAreaHeight: s.height * 0.07,
+                  textAreaWidth: s.width * 0.4,
+                  style: context.text.displayMedium,
+                  alignment: Alignment.centerLeft,
+                ),
+              ],
+            ),
+            Assets.images.rivDownload.image(
+              width: s.width * 0.4,
+            ),
+          ],
         ),
       ),
     );
   }
-
-  static const _code = '''
-class LikeButton extends HookWidget {
-  const LikeButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final stateMachineController = useRef<StateMachineController?>(null);
-    // SMI = StateMachineInstance
-    final pressed = useRef<SMIBool?>(null);
-
-    return GestureDetector(
-      onTap: () => pressed.value!.value = !pressed.value!.value,
-      child: RiveAnimation.asset(
-        'assets/rive/light_like.riv',
-        onInit: (artboard) {
-          // artboard から StateMachineController を取得
-          stateMachineController.value = StateMachineController.fromArtboard(
-            artboard,
-            'LikeStateMachine',
-          );
-          // artboard に StateMachineController を紐付ける
-          artboard.addController(stateMachineController.value!);
-          // StateMachineController から SMIBool を取得
-          pressed.value ??= stateMachineController.value!
-              .findInput<bool>('Pressed')! as SMIBool;
-        },
-      ),
-    );
-  }
-}
-  ''';
-
-  static const pubspec = '''
-// pubspec.yaml
-flutter:
-  assets:
-    - assets/rive/
-''';
 }

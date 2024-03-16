@@ -10,7 +10,10 @@ import 'package:flutter_deck/flutter_deck.dart';
 class Slide12 extends FlutterDeckSlideWidget {
   const Slide12()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/12'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/12',
+            title: 'Flutter での実装',
+          ),
         );
 
   @override
@@ -20,56 +23,64 @@ class Slide12 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.blank(
       builder: customSlideBuilder(
         pageNumber: 12,
-        title: '実装の tips',
+        title: 'Flutter での実装',
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
-          child: Column(
+          child: Row(
             children: [
-              Row(
-                children: [
-                  AutoResizedText(
-                    '1. ',
-                    textAreaHeight: textAreaHeight,
-                    style: context.text.displayMedium,
-                    alignment: Alignment.centerLeft,
-                  ),
-                  LinkText(
-                    text: 'flutter_gen',
-                    url: 'https://pub.dev/packages/flutter_gen',
-                    textAreaHeight: textAreaHeight,
-                    style: context.text.displayMedium,
-                    alignment: Alignment.centerLeft,
-                  ),
-                  AutoResizedText(
-                    ' を使う',
-                    textAreaHeight: textAreaHeight,
-                    style: context.text.displayMedium,
-                    alignment: Alignment.centerLeft,
-                  ),
-                ],
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        AutoResizedText(
+                          '1. ',
+                          textAreaHeight: textAreaHeight,
+                          style: context.text.displayMedium,
+                          alignment: Alignment.centerLeft,
+                        ),
+                        LinkText(
+                          text: 'rive',
+                          url: 'https://pub.dev/packages/rive',
+                          textAreaHeight: textAreaHeight * 1.2,
+                          style: context.text.displayMedium,
+                          alignment: Alignment.centerLeft,
+                        ),
+                        AutoResizedText(
+                          ' パッケージを追加',
+                          textAreaHeight: textAreaHeight,
+                          style: context.text.displayMedium,
+                          alignment: Alignment.centerLeft,
+                        ),
+                      ],
+                    ),
+                    AutoResizedText(
+                      '2. assets/rive に .riv を配置',
+                      textAreaHeight: textAreaHeight,
+                      style: context.text.displayMedium,
+                      alignment: Alignment.centerLeft,
+                    ),
+                    AutoResizedText(
+                      '3. pubspec.yaml に追加',
+                      textAreaHeight: textAreaHeight,
+                      style: context.text.displayMedium,
+                      alignment: Alignment.centerLeft,
+                    ),
+                    const CodeView(
+                      code: pubspec,
+                      widthFactor: 0.3,
+                      heightFactor: 0.2,
+                    ),
+                  ],
+                ),
               ),
-              AutoResizedText(
-                '  asset を文字列ではなく型安全に使用できる',
-                textAreaHeight: textAreaHeight,
-                style: context.text.displayMedium,
-                alignment: Alignment.centerLeft,
-              ),
-              const CGap(heightFactor: 0.05),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CodeView(
-                    code: _codeBefore,
-                    widthFactor: 0.4,
-                    heightFactor: 0.43,
-                  ),
-                  CodeView(
-                    code: _codeAfter,
-                    widthFactor: 0.4,
-                    heightFactor: 0.43,
-                  ),
-                ],
+              const CGap(widthFactor: 0.02),
+              const CodeView(
+                code: _code,
+                widthFactor: 0.5,
+                heightFactor: 0.8,
               ),
             ],
           ),
@@ -78,34 +89,42 @@ class Slide12 extends FlutterDeckSlideWidget {
     );
   }
 
-  static const _codeBefore = '''
-// BEFORE
-RiveAnimation.asset(
-  'assets/rive/light_like.riv',
-  onInit: (artboard) {
-    stateMachineController.value = StateMachineController.fromArtboard(
-      artboard,
-      'LikeStateMachine',
+  static const _code = '''
+class LikeButton extends HookWidget {
+  const LikeButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final stateMachineController = useRef<StateMachineController?>(null);
+    // SMI = StateMachineInstance
+    final pressed = useRef<SMIBool?>(null);
+
+    return GestureDetector(
+      onTap: () => pressed.value!.value = !pressed.value!.value,
+      child: RiveAnimation.asset(
+        'assets/rive/light_like.riv',
+        onInit: (artboard) {
+          // artboard から StateMachineController を取得
+          stateMachineController.value = StateMachineController.fromArtboard(
+            artboard,
+            'LikeStateMachine',
+          );
+          // artboard に StateMachineController を紐付ける
+          artboard.addController(stateMachineController.value!);
+          // StateMachineController から SMIBool を取得
+          pressed.value ??= stateMachineController.value!
+              .findInput<bool>('Pressed')! as SMIBool;
+        },
+      ),
     );
-    artboard.addController(stateMachineController.value!);
-    pressed.value ??= stateMachineController.value!
-        .findInput<bool>('Pressed')! as SMIBool;
-  },
-);
+  }
+}
   ''';
 
-  static const _codeAfter = '''
-// AFTER
-Assets.rive.lightLike.rive(
-  onInit: (artboard) {
-    stateMachineController.value = StateMachineController.fromArtboard(
-      artboard,
-      'LikeStateMachine',
-    );
-    artboard.addController(stateMachineController.value!);
-    pressed.value ??= stateMachineController.value!
-        .findInput<bool>('Pressed')! as SMIBool;
-  },
-);
-  ''';
+  static const pubspec = '''
+// pubspec.yaml
+flutter:
+  assets:
+    - assets/rive/
+''';
 }
