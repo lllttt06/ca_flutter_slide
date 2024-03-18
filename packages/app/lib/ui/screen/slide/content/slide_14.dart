@@ -90,14 +90,15 @@ StateMachineController Function({
   ''';
 
   static const codeAfter = '''
+final initStateMachineController = useInitStateMachineController();
+// ...
 Assets.rive.lightLike.rive(
   onInit: (artboard) {
     // この部分
-    stateMachineController.value = StateMachineController.fromArtboard(
-      artboard,
-      'LikeStateMachine',
+    stateMachineController.value = initStateMachineController(
+      artboard: artboard,
+      name: 'LikeStateMachine',
     );
-    artboard.addController(stateMachineController.value!);
     pressed.value ??= stateMachineController.value!
         .findInput<bool>('Pressed')! as SMIBool;
   },

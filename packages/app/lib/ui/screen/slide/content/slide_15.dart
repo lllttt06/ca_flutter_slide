@@ -71,8 +71,7 @@ Assets.rive.lightLike.rive(
       name: 'LikeStateMachine',
     );
     // この部分
-    pressed.value ??= stateMachineController.value!
-        .findInput<bool>('Pressed')! as SMIBool;
+    pressed.value ??= stateMachineController.value!.findInputBool('Pressed');
   },
 );
   ''';

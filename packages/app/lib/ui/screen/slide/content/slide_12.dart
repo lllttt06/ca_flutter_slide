@@ -4,6 +4,7 @@ import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/component/rive/like_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -68,10 +69,18 @@ class Slide12 extends FlutterDeckSlideWidget {
                       style: context.text.displayMedium,
                       alignment: Alignment.centerLeft,
                     ),
-                    const CodeView(
-                      code: pubspec,
-                      widthFactor: 0.3,
-                      heightFactor: 0.2,
+                    Row(
+                      children: [
+                        const CodeView(
+                          code: pubspec,
+                          widthFactor: 0.15,
+                          heightFactor: 0.15,
+                        ),
+                        LikeButton(
+                          width: context.slideSize.height * 0.3,
+                          height: context.slideSize.height * 0.3,
+                        ),
+                      ],
                     ),
                   ],
                 ),

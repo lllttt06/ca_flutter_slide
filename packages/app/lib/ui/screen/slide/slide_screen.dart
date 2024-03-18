@@ -1,6 +1,4 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
-import 'package:ca_flutter_slide/gen/fonts.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/citation_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_1.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_10.dart';
@@ -24,7 +22,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-@RoutePage()
 class SlideScreen extends HookWidget {
   const SlideScreen({super.key});
 
