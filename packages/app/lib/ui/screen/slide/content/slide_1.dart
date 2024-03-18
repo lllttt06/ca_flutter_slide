@@ -1,9 +1,9 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/gen/fonts.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Slide1 extends FlutterDeckSlideWidget {
   const Slide1()
@@ -16,9 +16,6 @@ class Slide1 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    debugPrint('current: ' + context.text.titleLarge.toString());
-    debugPrint(
-        'Google: ' + GoogleFonts.notoSansJpTextTheme().titleLarge.toString());
     return FlutterDeckSlide.blank(
       builder: (context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -37,6 +34,7 @@ class Slide1 extends FlutterDeckSlideWidget {
             style: context.text.displayLarge?.bold.copyWith(
               color: context.color.primary,
               height: 1.5,
+              fontFamily: FontFamily.notoSans,
             ),
           ),
           const CGap(heightFactor: 0.1),

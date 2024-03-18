@@ -15,9 +15,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  # ルーティング
-  auto_route: ^7.9.0
-
   # アノテーション
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
@@ -47,8 +44,6 @@ dependencies:
 
   syntax_highlight: ^0.4.0
 
-  google_fonts: ^6.2.0
-
 dependency_overrides:
   web: ^0.4.0
 
@@ -59,8 +54,6 @@ dev_dependencies:
   flutter_hooks_test: ^0.0.5
   mocktail: ^1.0.3
 
-  # 自動生成
-  auto_route_generator: ^7.3.2
   build_runner: ^2.4.8
   flutter_gen_runner: ^5.4.0
   
@@ -84,3 +77,8 @@ flutter:
   assets:
     - assets/images/
     - assets/rive/
+  
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: assets/fonts/NotoSansJP-Regular.ttf

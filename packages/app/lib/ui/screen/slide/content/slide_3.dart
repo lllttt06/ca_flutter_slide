@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/gen/fonts.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -25,7 +26,7 @@ class Slide3 extends FlutterDeckSlideWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AutoResizedText(
-              'インタラクティブアニメーション*を簡単に作成できるツール',
+              'インタラクティブアニメーション*を作成できるツール',
               textAreaHeight: context.slideSize.height * 0.1,
               style: context.text.displayLarge?.bold,
             ),

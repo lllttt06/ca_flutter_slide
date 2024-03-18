@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ca_flutter_slide/gen/fonts.gen.dart';
 import 'package:flutter/widgets.dart';
 
 class AutoResizedText extends StatelessWidget {
@@ -28,7 +29,7 @@ class AutoResizedText extends StatelessWidget {
         alignment: alignment,
         child: AutoSizeText(
           text,
-          style: style,
+          style: style?.copyWith(fontFamily: FontFamily.notoSans),
           textAlign: textAlign,
         ),
       ),

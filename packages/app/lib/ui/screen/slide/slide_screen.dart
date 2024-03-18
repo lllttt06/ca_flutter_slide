@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/gen/fonts.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/citation_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_1.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_10.dart';
@@ -30,14 +31,6 @@ class SlideScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckApp(
-      lightTheme: FlutterDeckThemeData.dark(),
-      darkTheme: FlutterDeckThemeData.dark(),
-      speakerInfo: const FlutterDeckSpeakerInfo(
-        name: 'Takuya Arita',
-        description: '',
-        socialHandle: '',
-        imagePath: '',
-      ),
       configuration: FlutterDeckConfiguration(
         controls: const FlutterDeckControlsConfiguration(
           shortcuts: FlutterDeckShortcutsConfiguration(
