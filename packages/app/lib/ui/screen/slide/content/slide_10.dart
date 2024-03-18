@@ -11,7 +11,10 @@ import 'package:rive/rive.dart';
 class Slide10 extends FlutterDeckSlideWidget {
   const Slide10()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/10'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/10',
+            title: 'Rive でアニメーション作成',
+          ),
         );
 
   @override

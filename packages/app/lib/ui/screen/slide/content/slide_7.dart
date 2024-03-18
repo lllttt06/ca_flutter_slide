@@ -10,7 +10,10 @@ import 'package:flutter_deck/flutter_deck.dart';
 class Slide7 extends FlutterDeckSlideWidget {
   const Slide7()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/7'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/7',
+            title: 'Rive のメリット | Lottie との比較',
+          ),
         );
 
   @override

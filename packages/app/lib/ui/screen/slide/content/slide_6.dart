@@ -9,7 +9,10 @@ import 'package:flutter_deck/flutter_deck.dart';
 class Slide6 extends FlutterDeckSlideWidget {
   const Slide6()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/6'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/6',
+            title: 'Rive で Flutter アニメーションのデメリットを解決！',
+          ),
         );
 
   @override

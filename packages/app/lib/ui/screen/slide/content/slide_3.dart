@@ -11,6 +11,7 @@ class Slide3 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/3',
+            title: 'Rive とは？',
           ),
         );
 

@@ -3,15 +3,22 @@ import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dar
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Slide1 extends FlutterDeckSlideWidget {
   const Slide1()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/1'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/1',
+            title: 'タイトル',
+          ),
         );
 
   @override
   FlutterDeckSlide build(BuildContext context) {
+    debugPrint('current: ' + context.text.titleLarge.toString());
+    debugPrint(
+        'Google: ' + GoogleFonts.notoSansJpTextTheme().titleLarge.toString());
     return FlutterDeckSlide.blank(
       builder: (context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,

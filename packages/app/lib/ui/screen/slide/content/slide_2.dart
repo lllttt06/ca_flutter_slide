@@ -10,7 +10,10 @@ import 'package:flutter_deck/flutter_deck.dart';
 class Slide2 extends FlutterDeckSlideWidget {
   const Slide2()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/2'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/2',
+            title: '自己紹介',
+          ),
         );
 
   @override

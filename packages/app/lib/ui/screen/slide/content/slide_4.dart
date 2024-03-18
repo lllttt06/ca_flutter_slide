@@ -7,7 +7,10 @@ import 'package:flutter_deck/flutter_deck.dart';
 class Slide4 extends FlutterDeckSlideWidget {
   const Slide4()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/4'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/4',
+            title: 'インタラクティブアニメーションの利点',
+          ),
         );
 
   @override

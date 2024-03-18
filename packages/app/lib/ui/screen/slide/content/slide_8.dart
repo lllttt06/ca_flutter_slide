@@ -12,7 +12,10 @@ import 'package:gap/gap.dart';
 class Slide8 extends FlutterDeckSlideWidget {
   const Slide8()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/8'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/8',
+            title: 'Flutter での活用事例',
+          ),
         );
 
   @override

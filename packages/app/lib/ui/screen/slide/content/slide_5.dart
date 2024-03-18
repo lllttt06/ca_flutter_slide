@@ -10,7 +10,10 @@ import 'package:flutter_deck/flutter_deck.dart';
 class Slide5 extends FlutterDeckSlideWidget {
   const Slide5()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/5'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/5',
+            title: 'Flutter のアニメーション',
+          ),
         );
 
   @override

@@ -9,6 +9,7 @@ import 'package:ca_flutter_slide/ui/screen/slide/content/slide_13.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_14.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_15.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_16.dart';
+import 'package:ca_flutter_slide/ui/screen/slide/content/slide_17.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_2.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_3.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_4.dart';
@@ -87,6 +88,7 @@ class SlideScreen extends HookWidget {
         Slide14(),
         Slide15(),
         Slide16(),
+        Slide17(),
         CitationSlide(),
       ],
     );

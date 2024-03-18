@@ -4,6 +4,7 @@ import 'package:ca_flutter_slide/state/citation_state.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/slide_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:syntax_highlight/syntax_highlight.dart';
 
@@ -31,18 +32,24 @@ class MyApp extends HookConsumerWidget {
     debugPrint('citation: $citation');
 
     return MaterialApp.router(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: true,
-      ),
-      darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: true,
-      ),
+      theme: _buildTheme(Brightness.dark),
+      darkTheme: _buildTheme(Brightness.dark),
       supportedLocales: L10n.supportedLocales,
       localizationsDelegates: L10n.localizationsDelegates,
       routerDelegate: router.delegate(),
       routeInformationParser: router.defaultRouteParser(),
+    );
+  }
+
+  ThemeData _buildTheme(Brightness brightness) {
+    final baseTheme = ThemeData(
+      brightness: brightness,
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+      useMaterial3: true,
+    );
+
+    return baseTheme.copyWith(
+      textTheme: GoogleFonts.sawarabiGothicTextTheme(baseTheme.textTheme),
     );
   }
 }

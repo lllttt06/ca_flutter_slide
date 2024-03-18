@@ -10,7 +10,10 @@ import 'package:flutter_deck/flutter_deck.dart';
 class Slide11 extends FlutterDeckSlideWidget {
   const Slide11()
       : super(
-          configuration: const FlutterDeckSlideConfiguration(route: '/11'),
+          configuration: const FlutterDeckSlideConfiguration(
+            route: '/11',
+            title: 'Rive でアニメーション作成',
+          ),
         );
 
   @override
