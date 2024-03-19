@@ -21,7 +21,7 @@ class Slide12 extends FlutterDeckSlideWidget {
   FlutterDeckSlide build(BuildContext context) {
     final textAreaHeight = context.slideSize.height * 0.1;
 
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 12,
         title: 'Flutter での実装',
@@ -39,20 +39,26 @@ class Slide12 extends FlutterDeckSlideWidget {
                         AutoResizedText(
                           '1. ',
                           textAreaHeight: textAreaHeight,
-                          style: context.text.displayMedium,
+                          style: context.isSmall
+                              ? context.text.bodyLarge
+                              : context.text.displayMedium,
                           alignment: Alignment.centerLeft,
                         ),
                         LinkText(
                           text: 'rive',
                           url: 'https://pub.dev/packages/rive',
                           textAreaHeight: textAreaHeight * 1.2,
-                          style: context.text.displayMedium,
+                          style: context.isSmall
+                              ? context.text.bodyLarge
+                              : context.text.displayMedium,
                           alignment: Alignment.centerLeft,
                         ),
                         AutoResizedText(
                           ' パッケージを追加',
                           textAreaHeight: textAreaHeight,
-                          style: context.text.displayMedium,
+                          style: context.isSmall
+                              ? context.text.bodyLarge
+                              : context.text.displayMedium,
                           alignment: Alignment.centerLeft,
                         ),
                       ],

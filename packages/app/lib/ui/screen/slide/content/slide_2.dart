@@ -18,7 +18,7 @@ class Slide2 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 2,
         title: '自己紹介',

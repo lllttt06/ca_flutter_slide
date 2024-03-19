@@ -16,7 +16,7 @@ class CitationSlide extends FlutterDeckSlideWidget {
   @override
   FlutterDeckSlide build(BuildContext context) {
     final textAreaHeight = context.slideSize.height * 0.08;
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 18,
         title: '参考文献',
@@ -28,6 +28,13 @@ class CitationSlide extends FlutterDeckSlideWidget {
               LinkText(
                 text: 'Rive 公式サイト',
                 url: 'https://rive.app/',
+                textAreaHeight: textAreaHeight,
+                style: context.text.displayMedium,
+                alignment: Alignment.centerLeft,
+              ),
+              LinkText(
+                text: 'flutter_deck',
+                url: 'https://pub.dev/packages/flutter_deck',
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,

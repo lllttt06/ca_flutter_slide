@@ -19,7 +19,7 @@ class Slide15 extends FlutterDeckSlideWidget {
   FlutterDeckSlide build(BuildContext context) {
     final textAreaHeight = context.slideSize.height * 0.1;
 
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 15,
         title: '実装の tips',

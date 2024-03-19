@@ -10,10 +10,11 @@ Widget Function(BuildContext) customSlideBuilder({
   AlignmentGeometry alignment = Alignment.center,
 }) {
   return (BuildContext context) {
+    final padding = context.slideSize.height * 0.02;
     return PageNumberContainer(
       pageNumber: pageNumber,
       child: Padding(
-        padding: EdgeInsets.all(context.slideSize.height * 0.02),
+        padding: EdgeInsets.fromLTRB(padding, padding, padding, 0),
         child: Column(
           children: [
             Align(
@@ -29,7 +30,6 @@ Widget Function(BuildContext) customSlideBuilder({
                 ),
               ),
             ),
-            // Gap(context.slideSize.height * 0.02),
             Expanded(
               child: Align(
                 alignment: alignment,

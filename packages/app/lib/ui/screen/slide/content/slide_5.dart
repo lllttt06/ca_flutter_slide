@@ -18,7 +18,7 @@ class Slide5 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 5,
         title: 'Flutter のアニメーション',
@@ -28,13 +28,13 @@ class Slide5 extends FlutterDeckSlideWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Column(
+              Column(
                 children: [
-                  CGap(heightFactor: 0.02),
+                  const CGap(heightFactor: 0.02),
                   CodeView(
                     code: _code,
                     widthFactor: 0.37,
-                    heightFactor: 0.5,
+                    heightFactor: context.isSmall ? 0.7 : 0.5,
                   ),
                 ],
               ),

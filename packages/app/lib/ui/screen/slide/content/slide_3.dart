@@ -1,5 +1,4 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
-import 'package:ca_flutter_slide/gen/fonts.gen.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -18,7 +17,7 @@ class Slide3 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 3,
         title: 'Rive とは？',

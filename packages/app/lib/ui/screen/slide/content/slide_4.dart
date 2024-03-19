@@ -15,14 +15,14 @@ class Slide4 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 4,
         title: 'インタラクティブアニメーションの利点',
         builder: (context) => Padding(
           padding: EdgeInsets.only(bottom: context.slideSize.height * 0.1),
           child: AutoResizedText(
-            '・特定の行動をユーザーに促せる \n・難しいことをわかりやすく直感的に説明できる \n・楽しいユーザー体験を提供できる',
+            '・特定の行動をユーザーに促せる \n・難しいことを直感的に説明できる \n・楽しい体験を提供できる',
             textAreaHeight: context.slideSize.height * 0.7,
             style: context.text.displayLarge?.copyWith(height: 2),
           ),

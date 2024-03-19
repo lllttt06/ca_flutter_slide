@@ -20,7 +20,7 @@ class Slide10 extends FlutterDeckSlideWidget {
   @override
   FlutterDeckSlide build(BuildContext context) {
     final s = context.slideSize;
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 10,
         title: 'Rive でアニメーション作成',

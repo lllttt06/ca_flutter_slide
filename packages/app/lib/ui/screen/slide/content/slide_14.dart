@@ -16,7 +16,7 @@ class Slide14 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 14,
         title: '実装の tips',
@@ -28,19 +28,20 @@ class Slide14 extends FlutterDeckSlideWidget {
             children: [
               SizedBox(
                 width: context.slideSize.width * 0.4,
+                height: context.slideSize.height * 0.8,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     AutoResizedText(
-                      '2. よく使うロジックをまとめる \n\n   StateMachineController の\n   初期化ロジック',
-                      textAreaHeight: context.slideSize.height * 0.4,
+                      '2. よく使うロジックをまとめる \n\n   StateMachineController\n   の初期化ロジック',
+                      textAreaHeight: context.slideSize.height * 0.3,
                       style: context.text.displayMedium,
-                      alignment: Alignment.centerLeft,
+                      alignment: Alignment.topLeft,
                     ),
                     const CodeView(
                       code: codeAfter,
                       widthFactor: 0.4,
-                      heightFactor: 0.4,
+                      heightFactor: 0.5,
                     ),
                   ],
                 ),

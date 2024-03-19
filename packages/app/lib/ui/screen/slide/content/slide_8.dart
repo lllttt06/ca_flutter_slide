@@ -23,7 +23,7 @@ class Slide8 extends FlutterDeckSlideWidget {
     final demoWidth = context.slideSize.height * 0.4;
     final textAreaHeight = context.slideSize.height * 0.05;
 
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 8,
         title: 'Flutter での活用事例',

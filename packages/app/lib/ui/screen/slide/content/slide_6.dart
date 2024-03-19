@@ -17,7 +17,7 @@ class Slide6 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 6,
         title: 'Rive で Flutter アニメーションのデメリットを解決！',

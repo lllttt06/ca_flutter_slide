@@ -20,7 +20,6 @@ class CodeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final slideSize = context.slideSize;
-    final isSmall = slideSize.width < 1000;
     final highlighter = Highlighter(
       language: language,
       theme: highlightTheme,
@@ -28,7 +27,7 @@ class CodeView extends StatelessWidget {
     return Container(
       width: slideSize.width * widthFactor,
       height: slideSize.height * heightFactor,
-      padding: EdgeInsets.all(isSmall ? 4 : 16),
+      padding: EdgeInsets.all(context.isSmall ? 4 : 16),
       decoration: BoxDecoration(
         border: Border.all(
           color: context.color.inversePrimary,
@@ -40,7 +39,7 @@ class CodeView extends StatelessWidget {
       child: SingleChildScrollView(
         child: Text.rich(
           highlighter.highlight(code),
-          style: isSmall ? context.text.bodySmall : context.text.titleLarge,
+          style: context.isSmall ? context.text.bodySmall : context.text.titleLarge,
         ),
       ),
     );

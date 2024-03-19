@@ -26,6 +26,8 @@ extension BuildContextExt on BuildContext {
       );
 
   TextTheme get text => Theme.of(this).textTheme;
+
+  bool get isSmall => screenSize.width < 1000;
 }
 
 extension TextStyleExt on TextStyle {

@@ -18,7 +18,7 @@ class Slide7 extends FlutterDeckSlideWidget {
 
   @override
   FlutterDeckSlide build(BuildContext context) {
-    return FlutterDeckSlide.blank(
+    return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 7,
         title: 'Rive のメリット | Lottie との比較',
@@ -74,15 +74,34 @@ class Slide7 extends FlutterDeckSlideWidget {
                           ),
                         ],
                       ),
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Assets.images.lottieLogo
-                              .image(width: context.slideSize.height * 0.05),
-                          AutoResizedText(
-                            '  コミュニティの充実度',
-                            textAreaHeight: context.slideSize.height * 0.06,
-                            style: context.text.displayLarge,
-                            alignment: Alignment.centerLeft,
+                          Row(
+                            children: [
+                              Assets.images.lottieLogo.image(
+                                width: context.slideSize.height * 0.05,
+                              ),
+                              AutoResizedText(
+                                '  コミュニティの充実度',
+                                textAreaHeight: context.slideSize.height * 0.06,
+                                style: context.text.displayLarge,
+                                alignment: Alignment.centerLeft,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Assets.images.lottieLogo.image(
+                                width: context.slideSize.height * 0.05,
+                              ),
+                              AutoResizedText(
+                                '  アニメーションの自由度',
+                                textAreaHeight: context.slideSize.height * 0.06,
+                                style: context.text.displayLarge,
+                                alignment: Alignment.centerLeft,
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -107,7 +126,7 @@ class Slide7 extends FlutterDeckSlideWidget {
             LinkText(
               text: 'Rive 公式の Rive vs Lottie より',
               url: 'https://rive.app/blog/rive-as-a-lottie-alternative',
-              textAreaHeight: context.slideSize.height * 0.04,
+              textAreaHeight: context.slideSize.height * 0.06,
               style: context.text.displayMedium,
             ),
           ],
