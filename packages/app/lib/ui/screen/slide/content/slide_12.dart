@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
@@ -13,7 +14,7 @@ class Slide12 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/12',
-            title: 'Flutter での実装',
+            title: 'Implement with Flutter',
           ),
         );
 
@@ -24,7 +25,7 @@ class Slide12 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 12,
-        title: 'Flutter での実装',
+        title: context.l10n.slide_12_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
@@ -54,7 +55,7 @@ class Slide12 extends FlutterDeckSlideWidget {
                           alignment: Alignment.centerLeft,
                         ),
                         AutoResizedText(
-                          ' パッケージを追加',
+                          context.l10n.slide_12_add_package,
                           textAreaHeight: textAreaHeight,
                           style: context.isSmall
                               ? context.text.bodyLarge
@@ -64,13 +65,13 @@ class Slide12 extends FlutterDeckSlideWidget {
                       ],
                     ),
                     AutoResizedText(
-                      '2. assets/rive に .riv を配置',
+                      context.l10n.slide_12_put_riv_file,
                       textAreaHeight: textAreaHeight,
                       style: context.text.displayMedium,
                       alignment: Alignment.centerLeft,
                     ),
                     AutoResizedText(
-                      '3. pubspec.yaml に追加',
+                      context.l10n.slide_12_add_pubspec,
                       textAreaHeight: textAreaHeight,
                       style: context.text.displayMedium,
                       alignment: Alignment.centerLeft,

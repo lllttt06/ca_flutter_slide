@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class CitationSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/citation',
-            title: '参考文献',
+            title: 'Citation',
           ),
         );
 
@@ -19,14 +20,14 @@ class CitationSlide extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 18,
-        title: '参考文献',
+        title: context.l10n.citation_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
           child: Column(
             children: [
               LinkText(
-                text: 'Rive 公式サイト',
+                text: context.l10n.citation_1,
                 url: 'https://rive.app/',
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,

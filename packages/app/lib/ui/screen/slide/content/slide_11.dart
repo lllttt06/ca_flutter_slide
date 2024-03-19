@@ -1,5 +1,6 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -12,7 +13,7 @@ class Slide11 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/11',
-            title: 'Rive でアニメーション作成',
+            title: 'Create Animation with Rive',
           ),
         );
 
@@ -23,7 +24,7 @@ class Slide11 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 11,
-        title: 'Rive でアニメーション作成',
+        title: context.l10n.slide_9_title,
         builder: (context) => Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -31,28 +32,28 @@ class Slide11 extends FlutterDeckSlideWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AutoResizedText(
-                  'Rive のファイル形式',
+                  context.l10n.slide_11_form_of_rive_file,
                   textAreaHeight: s.height * 0.1,
                   textAreaWidth: s.width * 0.4,
                   style: context.text.displayMedium,
                   alignment: Alignment.centerLeft,
                 ),
                 AutoResizedText(
-                  '・riv ファイル',
+                  context.l10n.slide_11_riv_file,
                   textAreaHeight: s.height * 0.1,
                   textAreaWidth: s.width * 0.4,
                   style: context.text.displayMedium,
                   alignment: Alignment.centerLeft,
                 ),
                 AutoResizedText(
-                  '　Runtime 用のファイル',
+                  context.l10n.slide_11_riv_file_description_1,
                   textAreaHeight: s.height * 0.07,
                   textAreaWidth: s.width * 0.4,
                   style: context.text.displayMedium,
                   alignment: Alignment.centerLeft,
                 ),
                 AutoResizedText(
-                  '　Flutter ではこちらを使用',
+                  context.l10n.slide_11_riv_file_description_2,
                   textAreaHeight: s.height * 0.07,
                   textAreaWidth: s.width * 0.4,
                   style: context.text.displayMedium,
@@ -60,21 +61,21 @@ class Slide11 extends FlutterDeckSlideWidget {
                 ),
                 const CGap(heightFactor: 0.02),
                 AutoResizedText(
-                  '・rev ファイル',
+                  context.l10n.slide_11_rev_file,
                   textAreaHeight: s.height * 0.1,
                   textAreaWidth: s.width * 0.4,
                   style: context.text.displayMedium,
                   alignment: Alignment.centerLeft,
                 ),
                 AutoResizedText(
-                  '　元データのファイル',
+                  context.l10n.slide_11_rev_file_description_1,
                   textAreaHeight: s.height * 0.07,
                   textAreaWidth: s.width * 0.4,
                   style: context.text.displayMedium,
                   alignment: Alignment.centerLeft,
                 ),
                 AutoResizedText(
-                  '　Editor ではこちらを使用',
+                  context.l10n.slide_11_rev_file_description_2,
                   textAreaHeight: s.height * 0.07,
                   textAreaWidth: s.width * 0.4,
                   style: context.text.displayMedium,

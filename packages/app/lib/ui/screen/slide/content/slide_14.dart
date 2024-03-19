@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -10,7 +11,7 @@ class Slide14 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/14',
-            title: '実装の tips 2-1',
+            title: 'Tips 2-1',
           ),
         );
 
@@ -19,7 +20,7 @@ class Slide14 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 14,
-        title: '実装の tips',
+        title: context.l10n.slide_13_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
@@ -30,10 +31,9 @@ class Slide14 extends FlutterDeckSlideWidget {
                 width: context.slideSize.width * 0.4,
                 height: context.slideSize.height * 0.8,
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     AutoResizedText(
-                      '2. よく使うロジックをまとめる \n\n   StateMachineController\n   の初期化ロジック',
+                      context.l10n.slide_14_description,
                       textAreaHeight: context.slideSize.height * 0.3,
                       style: context.text.displayMedium,
                       alignment: Alignment.topLeft,

@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/citation_slide.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_1.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/content/slide_10.dart';
@@ -28,7 +29,8 @@ class SlideScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckApp(
-      locale: const Locale('jp'),
+      supportedLocales: L10n.supportedLocales,
+      localizationsDelegates: L10n.localizationsDelegates,
       configuration: FlutterDeckConfiguration(
         controls: const FlutterDeckControlsConfiguration(
           shortcuts: FlutterDeckShortcutsConfiguration(

@@ -1,5 +1,6 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -12,7 +13,7 @@ class Slide2 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/2',
-            title: '自己紹介',
+            title: 'introduction',
           ),
         );
 
@@ -21,7 +22,7 @@ class Slide2 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 2,
-        title: '自己紹介',
+        title: context.l10n.slide_2_title,
         builder: (context) => Padding(
           padding: EdgeInsets.only(bottom: context.slideSize.height * 0.1),
           child: Row(
@@ -45,7 +46,7 @@ class Slide2 extends FlutterDeckSlideWidget {
                       alignment: Alignment.centerLeft,
                     ),
                     AutoResizedText(
-                      '株式会社サイバーエージェント 2023 年度入社',
+                      context.l10n.slide_2_company,
                       textAreaHeight: context.slideSize.height * 0.1,
                       style: context.text.displayMedium,
                       alignment: Alignment.centerLeft,

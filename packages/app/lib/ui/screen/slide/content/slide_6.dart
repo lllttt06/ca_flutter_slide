@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -11,7 +12,7 @@ class Slide6 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/6',
-            title: 'Rive で Flutter アニメーションのデメリットを解決！',
+            title: 'Resolve Flutter Animation demerit with Rive',
           ),
         );
 
@@ -20,7 +21,7 @@ class Slide6 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 6,
-        title: 'Rive で Flutter アニメーションのデメリットを解決！',
+        title: context.l10n.slide_6_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
@@ -28,20 +29,20 @@ class Slide6 extends FlutterDeckSlideWidget {
             children: [
               const CGap(heightFactor: 0.12),
               AutoResizedText(
-                '・細かいアニメーションを作るのが難しい',
+                context.l10n.slide_5_demerit_1,
                 textAreaHeight: context.slideSize.height * 0.08,
                 style: context.text.displayLarge?.copyWith(height: 1.5),
                 alignment: Alignment.centerLeft,
               ),
               AutoResizedText(
-                '　→ .riv ファイルを読み込むだけ',
+                context.l10n.slide_6_solution_1,
                 textAreaHeight: context.slideSize.height * 0.08,
                 style: context.text.displayLarge?.copyWith(height: 1.5),
                 alignment: Alignment.centerLeft,
               ),
               const CGap(heightFactor: 0.05),
               AutoResizedText(
-                '・デザイナーとの共有が難しい',
+                context.l10n.slide_5_demerit_2,
                 textAreaHeight: context.slideSize.height * 0.08,
                 style: context.text.displayLarge?.copyWith(height: 1.5),
                 alignment: Alignment.centerLeft,
@@ -49,7 +50,7 @@ class Slide6 extends FlutterDeckSlideWidget {
               Row(
                 children: [
                   AutoResizedText(
-                    '　→ 有料版 : ',
+                    context.l10n.slide_6_solution_2_1,
                     textAreaHeight: context.slideSize.height * 0.08,
                     style: context.text.displayLarge?.copyWith(height: 1.5),
                     alignment: Alignment.centerLeft,
@@ -63,7 +64,7 @@ class Slide6 extends FlutterDeckSlideWidget {
                     alignment: Alignment.centerLeft,
                   ),
                   AutoResizedText(
-                    ' を作成し、ブラウザでアニメーションの確認',
+                    context.l10n.slide_6_solution_2_2,
                     textAreaHeight: context.slideSize.height * 0.08,
                     style: context.text.displayLarge?.copyWith(height: 1.5),
                     alignment: Alignment.centerLeft,
@@ -73,7 +74,7 @@ class Slide6 extends FlutterDeckSlideWidget {
               Row(
                 children: [
                   AutoResizedText(
-                    '　→ 無料版 : ',
+                    context.l10n.slide_6_solution_3_1,
                     textAreaHeight: context.slideSize.height * 0.08,
                     style: context.text.displayLarge?.copyWith(height: 1.5),
                     alignment: Alignment.centerLeft,
@@ -86,7 +87,7 @@ class Slide6 extends FlutterDeckSlideWidget {
                     alignment: Alignment.centerLeft,
                   ),
                   AutoResizedText(
-                    ' で確認 (.riv ファイルが必要)',
+                    context.l10n.slide_6_solution_3_2,
                     textAreaHeight: context.slideSize.height * 0.08,
                     style: context.text.displayLarge?.copyWith(height: 1.5),
                     alignment: Alignment.centerLeft,

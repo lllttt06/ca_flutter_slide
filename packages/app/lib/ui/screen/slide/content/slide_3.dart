@@ -1,5 +1,6 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -12,7 +13,7 @@ class Slide3 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/3',
-            title: 'Rive とは？',
+            title: 'What is Rive?',
           ),
         );
 
@@ -21,20 +22,20 @@ class Slide3 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 3,
-        title: 'Rive とは？',
+        title: context.l10n.slide_3_title,
         builder: (context) => Stack(
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AutoResizedText(
-                  'インタラクティブアニメーション*を作成できるツール',
+                  context.l10n.slide_3_description_1,
                   textAreaHeight: context.slideSize.height * 0.1,
                   style: context.text.displayLarge?.bold,
                 ),
                 const CGap(heightFactor: 0.1),
                 AutoResizedText(
-                  '*ユーザーの操作によって動的に変化するアニメーション\n 例えば、、、',
+                  context.l10n.slide_3_description_2,
                   textAreaHeight: context.slideSize.height * 0.1,
                   style: context.text.displayMedium,
                 ),

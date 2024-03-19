@@ -1,5 +1,6 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -12,7 +13,7 @@ class Slide7 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/7',
-            title: 'Rive のメリット | Lottie との比較',
+            title: 'Benefits of Rive | Comparison with Lottie',
           ),
         );
 
@@ -21,7 +22,7 @@ class Slide7 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 7,
-        title: 'Rive のメリット | Lottie との比較',
+        title: context.l10n.slide_7_title,
         builder: (context) => Column(
           children: [
             Padding(
@@ -41,7 +42,7 @@ class Slide7 extends FlutterDeckSlideWidget {
                               Assets.images.riveLogo
                                   .svg(width: context.slideSize.height * 0.04),
                               AutoResizedText(
-                                '  パイプライン',
+                                context.l10n.slide_7_pipeline,
                                 textAreaHeight: context.slideSize.height * 0.06,
                                 style: context.text.displayLarge,
                                 alignment: Alignment.centerLeft,
@@ -53,7 +54,7 @@ class Slide7 extends FlutterDeckSlideWidget {
                               Assets.images.riveLogo
                                   .svg(width: context.slideSize.height * 0.04),
                               AutoResizedText(
-                                '  ファイルサイズ',
+                                context.l10n.slide_7_file_size,
                                 textAreaHeight: context.slideSize.height * 0.06,
                                 style: context.text.displayLarge,
                                 alignment: Alignment.centerLeft,
@@ -65,7 +66,7 @@ class Slide7 extends FlutterDeckSlideWidget {
                               Assets.images.riveLogo
                                   .svg(width: context.slideSize.height * 0.04),
                               AutoResizedText(
-                                '  無料版の機能',
+                                context.l10n.slide_7_free_version,
                                 textAreaHeight: context.slideSize.height * 0.06,
                                 style: context.text.displayLarge,
                                 alignment: Alignment.centerLeft,
@@ -83,7 +84,7 @@ class Slide7 extends FlutterDeckSlideWidget {
                                 width: context.slideSize.height * 0.05,
                               ),
                               AutoResizedText(
-                                '  コミュニティの充実度',
+                                context.l10n.slide_7_community,
                                 textAreaHeight: context.slideSize.height * 0.06,
                                 style: context.text.displayLarge,
                                 alignment: Alignment.centerLeft,
@@ -96,7 +97,7 @@ class Slide7 extends FlutterDeckSlideWidget {
                                 width: context.slideSize.height * 0.05,
                               ),
                               AutoResizedText(
-                                '  アニメーションの自由度',
+                                context.l10n.slide_7_animation_freedom,
                                 textAreaHeight: context.slideSize.height * 0.06,
                                 style: context.text.displayLarge,
                                 alignment: Alignment.centerLeft,
@@ -124,7 +125,7 @@ class Slide7 extends FlutterDeckSlideWidget {
             ),
             const CGap(heightFactor: 0.05),
             LinkText(
-              text: 'Rive 公式の Rive vs Lottie より',
+              text: context.l10n.slide_7_rive_vs_lottie,
               url: 'https://rive.app/blog/rive-as-a-lottie-alternative',
               textAreaHeight: context.slideSize.height * 0.06,
               style: context.text.displayMedium,

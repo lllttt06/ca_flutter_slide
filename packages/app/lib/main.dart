@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/gen/fonts.gen.dart';
+import 'package:ca_flutter_slide/l10n/l10n.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/slide_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: baseTheme,
       darkTheme: baseTheme,
+      supportedLocales: L10n.supportedLocales,
+      localizationsDelegates: L10n.localizationsDelegates,
       builder: (context, child) => const SlideScreen(),
     );
   }

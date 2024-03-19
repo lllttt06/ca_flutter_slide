@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class Slide4 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/4',
-            title: 'インタラクティブアニメーションの利点',
+            title: 'Benefit of Interactive Animation',
           ),
         );
 
@@ -18,11 +19,11 @@ class Slide4 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 4,
-        title: 'インタラクティブアニメーションの利点',
+        title: context.l10n.slide_4_title,
         builder: (context) => Padding(
           padding: EdgeInsets.only(bottom: context.slideSize.height * 0.1),
           child: AutoResizedText(
-            '・特定の行動をユーザーに促せる \n・難しいことを直感的に説明できる \n・楽しい体験を提供できる',
+            context.l10n.slide_4_description,
             textAreaHeight: context.slideSize.height * 0.7,
             style: context.text.displayLarge?.copyWith(height: 2),
           ),

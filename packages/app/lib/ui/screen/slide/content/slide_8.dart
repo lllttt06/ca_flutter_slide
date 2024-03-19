@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/link_text.dart';
@@ -14,7 +15,7 @@ class Slide8 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/8',
-            title: 'Flutter での活用事例',
+            title: 'UseCase of Flutter',
           ),
         );
 
@@ -26,7 +27,7 @@ class Slide8 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 8,
-        title: 'Flutter での活用事例',
+        title: context.l10n.slide_8_title,
         builder: (context) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,7 +36,7 @@ class Slide8 extends FlutterDeckSlideWidget {
                 horizontal: context.slideSize.width * 0.02,
               ),
               child: LinkText(
-                text: 'Rive 公式の UseCase より',
+                text: context.l10n.slide_8_from_rive_use_case,
                 url: 'https://rive.app/use-cases',
                 textAreaHeight: textAreaHeight * 2,
                 style: context.text.displayMedium,
@@ -51,7 +52,7 @@ class Slide8 extends FlutterDeckSlideWidget {
                       child: Column(
                         children: [
                           AutoResizedText(
-                            'いいね',
+                            context.l10n.slide_8_like,
                             textAreaHeight: textAreaHeight,
                             style: context.text.displayLarge?.bold,
                           ),
@@ -63,7 +64,7 @@ class Slide8 extends FlutterDeckSlideWidget {
                       child: Column(
                         children: [
                           AutoResizedText(
-                            'レーティング',
+                            context.l10n.slide_8_rating,
                             textAreaHeight: textAreaHeight,
                             style: context.text.displayLarge?.bold,
                           ),

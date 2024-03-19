@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
@@ -12,7 +13,7 @@ class Slide13 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/13',
-            title: '実装の tips 1',
+            title: 'Tips 1',
           ),
         );
 
@@ -23,7 +24,7 @@ class Slide13 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 13,
-        title: '実装の tips',
+        title: context.l10n.slide_13_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
@@ -45,7 +46,7 @@ class Slide13 extends FlutterDeckSlideWidget {
                     alignment: Alignment.centerLeft,
                   ),
                   AutoResizedText(
-                    ' を使う',
+                    context.l10n.slide_13_use,
                     textAreaHeight: textAreaHeight,
                     style: context.text.displayMedium,
                     alignment: Alignment.centerLeft,
@@ -53,7 +54,7 @@ class Slide13 extends FlutterDeckSlideWidget {
                 ],
               ),
               AutoResizedText(
-                '  asset を文字列ではなく型安全に使用できる',
+                context.l10n.slide_13_description,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,

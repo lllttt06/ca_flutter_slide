@@ -1,5 +1,6 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
 import 'package:ca_flutter_slide/gen/assets.gen.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
@@ -13,7 +14,7 @@ class Slide16 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/16',
-            title: '実装の tips 3',
+            title: 'Tips 3',
           ),
         );
 
@@ -24,7 +25,7 @@ class Slide16 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 16,
-        title: '実装の tips',
+        title: context.l10n.slide_13_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
@@ -47,7 +48,7 @@ class Slide16 extends FlutterDeckSlideWidget {
                     alignment: Alignment.centerLeft,
                   ),
                   AutoResizedText(
-                    ' で不要な Repaint を抑える',
+                    context.l10n.slide_16_description_1,
                     textAreaHeight: textAreaHeight,
                     style: context.text.displayMedium,
                     alignment: Alignment.centerLeft,
@@ -55,7 +56,7 @@ class Slide16 extends FlutterDeckSlideWidget {
                 ],
               ),
               AutoResizedText(
-                '  再描画のタイミングを切り分けパフォーマンスを向上させる',
+                context.l10n.slide_16_description_2,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,

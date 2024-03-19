@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
@@ -12,7 +13,7 @@ class Slide5 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/5',
-            title: 'Flutter のアニメーション',
+            title: 'Animation of Flutter',
           ),
         );
 
@@ -21,7 +22,7 @@ class Slide5 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 5,
-        title: 'Flutter のアニメーション',
+        title: context.l10n.slide_5_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
@@ -43,7 +44,7 @@ class Slide5 extends FlutterDeckSlideWidget {
                 child: Column(
                   children: [
                     AutoResizedText(
-                      'よく使われるのは',
+                      context.l10n.slide_5_description_1,
                       textAreaHeight: context.slideSize.height * 0.08,
                       style: context.text.displayLarge?.semiBold,
                       alignment: Alignment.centerLeft,
@@ -70,7 +71,7 @@ class Slide5 extends FlutterDeckSlideWidget {
                               context.text.displayLarge?.copyWith(height: 1.5),
                         ),
                         AutoResizedText(
-                          ' などのパッケージ',
+                          context.l10n.slide_5_description_2,
                           textAreaHeight: context.slideSize.height * 0.08,
                           style:
                               context.text.displayLarge?.copyWith(height: 1.5),
@@ -79,19 +80,19 @@ class Slide5 extends FlutterDeckSlideWidget {
                     ),
                     const CGap(heightFactor: 0.05),
                     AutoResizedText(
-                      'デメリット',
+                      context.l10n.slide_5_demerit_title,
                       textAreaHeight: context.slideSize.height * 0.08,
                       style: context.text.displayLarge?.semiBold,
                       alignment: Alignment.centerLeft,
                     ),
                     AutoResizedText(
-                      '・細かいアニメーションを作るのが難しい',
+                      context.l10n.slide_5_demerit_1,
                       textAreaHeight: context.slideSize.height * 0.08,
                       style: context.text.displayLarge?.copyWith(height: 1.5),
                       alignment: Alignment.centerLeft,
                     ),
                     AutoResizedText(
-                      '・デザイナーとの共有が難しい',
+                      context.l10n.slide_5_demerit_2,
                       textAreaHeight: context.slideSize.height * 0.08,
                       style: context.text.displayLarge?.copyWith(height: 1.5),
                       alignment: Alignment.centerLeft,
@@ -115,7 +116,7 @@ class Slide5 extends FlutterDeckSlideWidget {
                               alignment: Alignment.centerLeft,
                             ),
                             AutoResizedText(
-                              ' を使用！',
+                              context.l10n.slide_5_use,
                               textAreaHeight: context.slideSize.height * 0.12,
                               style: context.text.displayLarge,
                               alignment: Alignment.centerLeft,

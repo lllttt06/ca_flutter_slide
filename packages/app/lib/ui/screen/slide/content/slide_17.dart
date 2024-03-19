@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_slide_builder.dart';
@@ -10,7 +11,7 @@ class Slide17 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/17',
-            title: 'まとめ',
+            title: 'summary',
           ),
         );
 
@@ -21,45 +22,45 @@ class Slide17 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 17,
-        title: 'まとめ',
+        title: context.l10n.slide_17_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
           child: Column(
             children: [
               AutoResizedText(
-                '・Rive を利用してインタラクティブアニメーションを簡単に実装',
+                context.l10n.slide_17_summary_1,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               AutoResizedText(
-                '・Rive 最大の特徴はパイプラインとファイルサイズ',
+                context.l10n.slide_17_summary_2,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               AutoResizedText(
-                '・いくつかの実装 tips',
+                context.l10n.slide_17_summary_3,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               const CGap(heightFactor: 0.1),
               AutoResizedText(
-                '今回紹介できなかった内容',
+                context.l10n.slide_17_future_content,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               AutoResizedText(
-                '・StateMachineInputs の Number, Trigger',
+                context.l10n.slide_17_future_content_1,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               AutoResizedText(
-                '・Listener, Events などの機能',
+                context.l10n.slide_17_future_content_2,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,

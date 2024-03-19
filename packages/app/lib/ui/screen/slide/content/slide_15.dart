@@ -1,4 +1,5 @@
 import 'package:ca_flutter_slide/foundation/build_context_exe.dart';
+import 'package:ca_flutter_slide/l10n/l10n_ext.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/auto_resized_text.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/code_view.dart';
 import 'package:ca_flutter_slide/ui/screen/slide/component/custom_gap.dart';
@@ -11,7 +12,7 @@ class Slide15 extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/15',
-            title: '実装の tips 2-2',
+            title: 'Tips 2-2',
           ),
         );
 
@@ -22,20 +23,20 @@ class Slide15 extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.custom(
       builder: customSlideBuilder(
         pageNumber: 15,
-        title: '実装の tips',
+        title: context.l10n.slide_13_title,
         builder: (context) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.slideSize.width * 0.02),
           child: Column(
             children: [
               AutoResizedText(
-                '2. よく使うロジックをまとめる',
+                context.l10n.slide_15_description_1,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
               ),
               AutoResizedText(
-                '  SMI value 取得の拡張関数を定義',
+                context.l10n.slide_15_description_2,
                 textAreaHeight: textAreaHeight,
                 style: context.text.displayMedium,
                 alignment: Alignment.centerLeft,
