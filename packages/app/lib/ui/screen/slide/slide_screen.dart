@@ -28,6 +28,7 @@ class SlideScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckApp(
+      locale: const Locale('jp'),
       configuration: FlutterDeckConfiguration(
         controls: const FlutterDeckControlsConfiguration(
           shortcuts: FlutterDeckShortcutsConfiguration(
