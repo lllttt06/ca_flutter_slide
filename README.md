@@ -1,16 +1,10 @@
-# flutter_template 
+# Flutter × Rive 魅力的なアニメーション
 
-A new Flutter project.
+<img width="1727" alt="スクリーンショット 2024-03-20 午前9 36 47" src="https://github.com/lllttt06/ca_flutter_slide/assets/72681064/a21bf257-11c5-4ab5-aca4-524ff2293e1e">
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+A presentation from [CA.flutter#2](https://cyberagent.connpass.com/event/309956/)
 
-A few resources to get you started if this is your first Flutter project:
+Powered by flutter_deck 🚀
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+You can see presentation -> https://lllttt06.github.io/ca_flutter_slide/#/1
