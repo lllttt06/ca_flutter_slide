@@ -29,7 +29,7 @@ class Slide10 extends FlutterDeckSlideWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AutoResizedText(
-              'StateMachine の Input を変更することでアニメーションを制御',
+              context.l10n.slide_10_description,
               textAreaHeight: s.height * 0.1,
               style: context.text.displayMedium,
             ),

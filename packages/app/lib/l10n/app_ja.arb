@@ -36,6 +36,7 @@
   "slide_8_like": "いいね",
   "slide_8_rating": "レーティング",
   "slide_9_title": "Rive でアニメーション作成",
+  "slide_10_description": "StateMachine の Input を変更することでアニメーションを制御",
   "slide_11_form_of_rive_file": "Rive ファイルの形式",
   "slide_11_riv_file": "・riv ファイル",
   "slide_11_riv_file_description_1": "　Runtime 用のファイル",
