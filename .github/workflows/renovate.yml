@@ -23,7 +23,7 @@ jobs:
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v41.0.13
         with:
-          configurationFile: self_hosted_renovate.js
+          configurationFile: renovate-config.json
           token: ${{ steps.app-token.outputs.token }}
           env-regex: "^(?:RENOVATE_\\w+|LOG_LEVEL|GITHUB_COM_TOKEN|NODE_OPTIONS|GIT_CONFIG_\\w+)$"
         env:

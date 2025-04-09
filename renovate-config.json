@@ -8,9 +8,6 @@
   "platform": "github",
   "cloneSubmodules": true,
   "forkProcessing": "enabled",
-  "repositories": [
-    "ca-flutter-slide/ca_flutter_slide"
-  ],
   "packageRules": [
     {
       "description": "lockFileMaintenance",
