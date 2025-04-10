@@ -51,7 +51,7 @@ dev_dependencies:
   # For Test
   flutter_test:
     sdk: flutter
-  flutter_hooks_test: ^0.0.5
+  flutter_hooks_test: ^0.0.7
   mocktail: ^1.0.3
 
   build_runner: ^2.4.8
