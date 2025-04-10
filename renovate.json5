@@ -9,12 +9,5 @@
   "prHourlyLimit": 3,
   "prConcurrentLimit": 3,
   "repositories": ["lllttt06/ca_flutter_slide"],
-  "includePaths": ["packages/app/pubspec.yaml"],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "non-major dependencies",
-      "groupSlug": "non-major"
-    }
-  ]
+  "includePaths": ["packages/app/pubspec.yaml"]
 }
