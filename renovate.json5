@@ -7,7 +7,6 @@
   onboarding: false,
   platform: "github",
   reviewers: ["@lllttt06"],
-  requireReviewers: true,
   semanticCommits: true,
   semanticCommitType: "upgrade",
   ignoreDeps: ["problematic-package"],
