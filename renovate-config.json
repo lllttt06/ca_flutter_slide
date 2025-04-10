@@ -1,7 +1,6 @@
 {
   "branchPrefix": "test-renovate",
   "dependencyDashboard": true,
-  "dryRun": "full",
   "username": "renovate-release",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": false,
@@ -9,10 +8,7 @@
   "cloneSubmodules": true,
   "prHourlyLimit": 3,
   "prConcurrentLimit": 3,
-  "repositories": ["ca_flutter_slide"],
-  "packageFiles": [
-    "packages/app/pubspec.yaml"
-  ],
+  "includePaths": ["packages/app/pubspec.yaml"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
