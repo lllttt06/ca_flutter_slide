@@ -6,20 +6,13 @@
   includePaths: ["packages/app/pubspec.yaml"],
   onboarding: false,
   platform: "github",
-  packageRules: [
-    {
-      matchPackagePatterns: ["*"],
-      groupName: "all dependencies",
-      groupSlug: "all"
-    }
-  ],
   reviewers: ["@lllttt06"],
   requireReviewers: true,
   semanticCommits: true,
   semanticCommitType: "upgrade",
   ignoreDeps: ["problematic-package"],
-  prConcurrentLimit: 3,
-  prHourlyLimit: 3,
+  // prConcurrentLimit: 3,
+  // prHourlyLimit: 3,
   repositories: ["lllttt06/ca_flutter_slide"],
   username: "renovate-release"
 }
