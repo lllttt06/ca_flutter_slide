@@ -9,6 +9,10 @@
   "cloneSubmodules": true,
   "prHourlyLimit": 3,
   "prConcurrentLimit": 3,
+  "repositories": ["ca_flutter_slide"],
+  "packageFiles": [
+    "packages/app/pubspec.yaml"
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
