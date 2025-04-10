@@ -21,18 +21,18 @@ dependencies:
   riverpod_annotation: ^2.3.5
   
   # hooks
-  flutter_hooks: ^0.20.5
+  flutter_hooks: ^0.21.0
 
   # riverpod
   hooks_riverpod: ^2.5.1
 
   # For DateTime
-  intl: ^0.18.1
+  intl: ^0.20.0
 
   # Gap
   gap: ^3.0.1
 
-  flutter_deck: ^0.13.0
+  flutter_deck: ^0.18.0
 
   rive: ^0.13.1
 
@@ -51,7 +51,7 @@ dev_dependencies:
   # For Test
   flutter_test:
     sdk: flutter
-  flutter_hooks_test: ^0.0.5
+  flutter_hooks_test: ^0.0.7
   mocktail: ^1.0.3
 
   build_runner: ^2.4.8
