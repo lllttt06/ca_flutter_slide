@@ -32,7 +32,7 @@ dependencies:
   # Gap
   gap: ^3.0.1
 
-  flutter_deck: ^0.13.0
+  flutter_deck: ^0.18.0
 
   rive: ^0.13.1
 
